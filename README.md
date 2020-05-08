@@ -58,8 +58,6 @@ A collection of drug-drug combinations with the following columns:
 
 #### `virus-host/*.tab`
 
-#TODO!
-
 All the files in this folder contain the Virus-Virus, Virus-Human, and Human-Human PPIs related to a specific virus (e.g., SARS-CoV, SARS-CoV-2, MERS-CoV, HIV, etc).
 All proteins are denoted by their Entrez IDs.
 - `BioGRID Interaction ID` --> TODO
