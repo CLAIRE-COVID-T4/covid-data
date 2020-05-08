@@ -10,7 +10,7 @@ Apart from `drug-structures.sdf`, All files are in TSV format (Tab-Separated Val
  - `drug-drug.tab`: a collection of Drug-Drug interaction, from [1].
  - `go-terms.tab`: Gene Ontology (GO) terms associated to each Human protein contained in `host-host.tab`.
  - `drug-structures.sdf`: drug Structure-Data File (SDF), from the open-data collection of [3].
- - `virus-host/*.tab`: cole##nomenclaturelection of various Human viruses, from [4].https://github.com/CLAIRE-COVID-T4/covid-data.git
+ - `virus-host/*.tab`: collection of various Human viruses, from [4].
 
 
 ## Content Details
