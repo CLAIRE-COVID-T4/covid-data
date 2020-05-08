@@ -1,9 +1,9 @@
 # COVID Datasets
-A collection of COVID-related datasets useful for drug-repurposing tasks. See the **Nomenclature** section for an explanation of the terms used.
+A collection of COVID-related datasets useful for drug-repurposing tasks. See the [**Nomenclature**](#nomenclature) section for an explanation of the terms used.
 
 ## Content Summary
 
-Apart from `drug-structures.sdf`, all files are in Tab-Separated Values (TSV) format, where the first line contains the column names. The file contents are:
+Apart from `drug-structures.sdf`, All files are in TSV format (Tab-Separated Values), where the first line contains the column names. The file contents are:
 
  - `host-host.tab`: a collection of Human Protein-Protein Interactions, from [1].
  - `drug-host.tab`: a collection of experimentally validated Drug-Protein interaction, from [1].
@@ -43,8 +43,8 @@ The [SDF](https://en.wikipedia.org/wiki/Chemical_table_file) file of all the dru
 A collection of GO terms. There can be more than one GO term associated with a specific gene. The file has the following columns:
 - `Entrez Gene` --> the Entrez ID of the gene
 - `GO ID` --> the GO term ID associated with the gene
-- `Evidence` --> the GO term [Evidence Code](http://geneontology.org/docs/guide-go-evidence-codes/)
-- `Qualifier` --> the GO term [Annotation](http://geneontology.org/docs/go-annotations/)
+- `Evidence` --> the code that indicates how the annotation to a particular term is supported. For more information see the [official guide](http://geneontology.org/docs/guide-go-evidence-codes/).
+- `Qualifier` --> the annotation qualifier. For more information see the [official guide](http://geneontology.org/docs/go-annotations/).
 - `GO Term` --> the name of the GO term
 - `PubMed` --> the publication ID in the PubMed database [5]. 
 - `Category` --> Can be `Function`, `Process` or `Component`
