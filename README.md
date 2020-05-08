@@ -99,6 +99,18 @@ All proteins are denoted by their Entrez IDs.
 - `Ontology Term Qualifier Names` --> TODO
 - `Ontology Term Types` --> TODO
 
+## Clustering: how-to
+
+To reproduce the procedure that generates clusters of the GO-terms, please do as follows:
+
+#TODO
+
+## Node2vec: how-to
+
+To reproduce the procedure that generates GO-terms embeddings using node2vec, please do as follows:
+
+#TODO
+
 ## Nomenclature
 
 - CAS Number: a unique numerical identifier assigned by the Chemical Abstracts Service (CAS) to every chemical substance described in the open scientific literature.
