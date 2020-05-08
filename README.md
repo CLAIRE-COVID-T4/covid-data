@@ -3,7 +3,7 @@ A collection of COVID-related datasets useful for drug-repurposing tasks. See th
 
 ## Content Summary
 
-Apart from `drug-structures.sdf`, All files are in TSV format (Tab-Separated Values), where the first line contains the column names. The file contents are:
+Apart from `drug-structures.sdf`, all files are in Tab-Separated Values (TSV) format, where the first line contains the column names. The file contents are:
 
  - `host-host.tab`: a collection of Human Protein-Protein Interactions, from [1].
  - `drug-host.tab`: a collection of experimentally validated Drug-Protein interaction, from [1].
@@ -43,8 +43,8 @@ The [SDF](https://en.wikipedia.org/wiki/Chemical_table_file) file of all the dru
 A collection of GO terms. There can be more than one GO term associated with a specific gene. The file has the following columns:
 - `Entrez Gene` --> the Entrez ID of the gene
 - `GO ID` --> the GO term ID associated with the gene
-- `Evidence` -->
-- `Qualifier` --> 
+- `Evidence` --> the GO term [Evidence Code](http://geneontology.org/docs/guide-go-evidence-codes/)
+- `Qualifier` --> the GO term [Annotation](http://geneontology.org/docs/go-annotations/)
 - `GO Term` --> the name of the GO term
 - `PubMed` --> the publication ID in the PubMed database [5]. 
 - `Category` --> Can be `Function`, `Process` or `Component`
@@ -58,7 +58,48 @@ A collection of drug-drug combinations with the following columns:
 
 #### `virus-host/*.tab`
 
-All the files in this folder contain the Virus-Virus, Virus-Human, and Human-Human PPIs related to a specific virus (e.g., SARS-CoV, SARS-CoV-2, MERS-CoV, HIV, etc). All proteins are denoted by their Entrez IDs.
+#TODO!
+
+All the files in this folder contain the Virus-Virus, Virus-Human, and Human-Human PPIs related to a specific virus (e.g., SARS-CoV, SARS-CoV-2, MERS-CoV, HIV, etc).
+All proteins are denoted by their Entrez IDs.
+- `BioGRID Interaction ID` --> TODO
+- `Entrez Gene Interactor A` --> TODO
+- `Entrez Gene Interactor B` --> TODO
+- `BioGRID ID Interactor A` --> TODO
+- `BioGRID ID Interactor B` --> TODO
+- `Systematic Name Interactor A` --> TODO
+- `Systematic Name Interactor B` --> TODO 
+- `Official Symbol Interactor A` --> TODO
+- `Official Symbol Interactor B` --> TODO
+- `Synonyms Interactor A` --> TODO
+- `Synonyms Interactor B` --> TODO
+- `Experimental System` --> TODO
+- `Experimental System Type` --> TODO
+- `Author` --> TODO
+- `Publication Source` --> TODO
+- `Organism ID Interactor A` --> TODO
+- `Organism Name Interactor A` --> TODO
+- `Organism ID Interactor B` --> TODO
+- `Organism Name Interactor B` --> TODO
+- `Throughput` --> TODO
+- `Score` --> TODO
+- `Modification` --> TODO
+- `Qualifications` --> TODO
+- `Tags` --> TODO
+- `Source` --> TODO
+- `Database` --> TODO
+- `SWISS-PROT Accessions Interactor A` --> TODO
+- `TREMBL Accessions Interactor A` --> TODO
+- `REFSEQ Accessions Interactor A` --> TODO
+- `SWISS-PROT Accessions Interactor B` --> TODO
+- `TREMBL Accessions Interactor B` --> TODO
+- `REFSEQ Accessions Interactor B` --> TODO
+- `Ontology Term IDs` --> TODO
+- `Ontology Term Names` --> TODO
+- `Ontology Term Categories` --> TODO
+- `Ontology Term Qualifier IDs` --> TODO
+- `Ontology Term Qualifier Names` --> TODO
+- `Ontology Term Types` --> TODO
 
 ## Nomenclature
 
