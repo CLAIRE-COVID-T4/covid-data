@@ -1,5 +1,5 @@
 # COVID Datasets
-A collection of COVID-related datasets useful for drug-repurposing tasks. See the [**Nomenclature**](##-nomenclature) section for an explanation of the terms used.
+A collection of COVID-related datasets useful for drug-repurposing tasks. See the [**Nomenclature**](#nomenclature) section for an explanation of the terms used.
 
 ## Content Summary
 
