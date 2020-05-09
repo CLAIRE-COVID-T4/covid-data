@@ -11,6 +11,7 @@ Apart from `drug-structures.sdf`, All files are in TSV format (Tab-Separated Val
  - `go-terms.tab`: Gene Ontology (GO) terms associated to each Human protein contained in `host-host.tab`.
  - `drug-structures.sdf`: drug Structure-Data File (SDF), from the open-data collection of [3].
  - `virus-host/*.tab`: collection of various Human viruses, from [4].
+ - `diseases/`
 
 
 ## Content Details
@@ -98,6 +99,55 @@ All proteins are denoted by their Entrez IDs.
 - `Ontology Term Qualifier Names` --> additional qualifying term names associated with `REFSEQ Accessions Interactor B`
 - `Ontology Term Types` --> additional types for terms classified as phenotypes
 
+
+#### `diseases/disgenet/curated_gene_disease_associations.tab`
+This file contains Gene-Disease associations from various resources such as UniProt, CGI, ClinGen, Genomics England Panel App, PsyGeNET, Orphanet, the HPO, and CTD (human data). See also [https://www.disgenet.org/dbinfo](https://www.disgenet.org/dbinfo). The columns are:
+
+- `geneId` --> NCBI Entrez Gene Identifier
+- `geneSymbol` --> Official Gene Symbol
+- `DSI` -->	 the Disease Specificity Index for the gene
+- `DPI` -->	the Disease Pleiotropy Index for the gene
+- `diseaseId` --> UMLS concept unique identifier
+- `diseaseName` --> name of the disease	
+- `diseaseType` --> the DisGeNET disease type: disease, phenotype and group
+- `diseaseClass` --> the MeSH disease class(es)
+- `diseaseSemanticType` -->	the UMLS Semantic Type(s) of the disease
+- `score` --> DisGENET score for the Gene-Disease association (see https://www.disgenet.org/dbinfo)
+- `EI` --> the Evidence Index for the Gene-Disease association
+- `YearInitial` --> first time that the Gene-Disease association was reported
+- `YearFinal` --> last time that the Gene-Disease association was reported
+- `NofPmids` --> total number of publications reporting the Gene-Disease association
+- `NofSnps` --> total number of SNPs associated to the Gene-Disease association
+- `source` --> original source reporting the Gene-Disease association
+
+
+#### `diseases/disgenet/disease_mappings.tab`
+Mappings from UMLS concept unique identifier to disease vocabularies: DO, EFO, HPO, ICD9CM, MSH, NCI, OMIM, and ORDO. The columns are:
+- `snpId` --> dbSNP variant Identifier
+- `geneId` --> NCBI Entrez Gene Identifier
+- `geneSymbol` --> Official Gene Symbol
+
+#### `diseases/disgenet/variant_to_gene_mappings.tab`
+Variants mapped to their corresponding genes, according to dbSNP. The columns are:
+- `snpId` --> dbSNP variant Identifier
+- `geneId` --> NCBI Entrez Gene Identifier
+- `geneSymbol` --> Official Gene Symbol
+
+#### `diseases/disgenet/entrez2uniprot.tab`
+Mapping from UniProt knowledge base (UniProtKB) to genes Entrez IDs: The columns are:
+- `UniProtKB` --> UniProtKB Identifier
+- `GENEID` --> A gene's Entrez ID
+
+#### `diseases/menche_disease_genes.tab`
+This file contains the disease gene associations provided by [8]. Each line contains the genes (gene IDs) associated with one disease. The columns are:
+
+- `disease` --> name of the disease
+- `number_of_all_genes` --> number of all associated genes
+- `number_of_OMIM_genes` --> number of associated genes from OMIM
+- `number_of_GWAS_genes` --> number of associated genes from GWAS
+- `OMIM_genes` --> comma-separated list of OMIM genes
+- `GWAS_genes` --> comma-separated list of GWAS genes
+
 ## Clustering: how-to
 
 To reproduce the procedure that generates clusters of the GO-terms, please do as follows:
@@ -120,14 +170,28 @@ To reproduce the procedure that generates GO-terms embeddings using node2vec, pl
 - Structure-Data File (SDF): a [standardized format](https://en.wikipedia.org/wiki/Chemical_table_file) to represent the 3d structure of a compound. It wraps the [MDL Molfile](https://en.wikipedia.org/wiki/Chemical_table_file#Molfile) format.
 - PPI: Protein-Protein Interactions.
 - PubMed: Biomedical literature database service [5].
+- OMIM: Online Mendelian Inheritance in Man catalog service [9].
+- GWAS: Genome-Wide Association Studies catalog service [10].
+- DisGeNET: a discovery platform integrating information on gene-disease associations from several public data sources and the literature [11].
+- UniProt: a database of protein sequence and functional information, many entries being derived from genome sequencing projects [12].
+- Evidence: see [Experimental Evidence Codes](https://wiki.thebiogrid.org/doku.php/experimental_systems)
+- UMLS: Unified Medical Language System [13]
+- dbSNP: Single Nucleotide Polymorphism Database [14]
 
 ## References
 
-[1] Cheng, F., Kovács, I.A. & Barabási, A. Network-based prediction of drug combinations. Nat Commun 10, 1197 (2019), [https://doi.org/10.1038/s41467-019-09186-x](https://doi.org/10.1038/s41467-019-09186-x) \
+[1] Cheng, F., Kovács, I.A. and Barabási, A. Network-based prediction of drug combinations. Nat Commun 10, 1197 (2019), [https://doi.org/10.1038/s41467-019-09186-x](https://doi.org/10.1038/s41467-019-09186-x) \
 [2] National Center for Biotechnology Information (NCBI), [https://www.ncbi.nlm.nih.gov/](https://www.ncbi.nlm.nih.gov/) \
 [3] DrugBank, [https://www.drugbank.ca/](https://www.drugbank.ca/) \
 [4] BioGrid, [https://thebiogrid.org/](https://thebiogrid.org/) \
 [5] PubMed, [https://pubmed.ncbi.nlm.nih.gov/](https://pubmed.ncbi.nlm.nih.gov/) \
 [6] Gene Ontology, [http://geneontology.org/](http://geneontology.org/) \
-[7] NCBI , [https://www.ncbi.nlm.nih.gov/gene](https://www.ncbi.nlm.nih.gov/gene)
+[7] NCBI , [https://www.ncbi.nlm.nih.gov/gene](https://www.ncbi.nlm.nih.gov/gene) \
+[8] Menche, J., Sharma, A., Kitsak, M., Ghiassian, S. D., Vidal, M., Loscalzo, J., and Barabási, A. Uncovering Disease-Disease Relationships Through The Human Interactome \
+[9] OMIM, [https://www.omim.org/](https://www.omim.org/) \
+[10] GWAS, [https://www.ebi.ac.uk/gwas/](https://www.ebi.ac.uk/gwas/) \
+[11] DisGeNET, [http://www.disgenet.org](http://www.disgenet.org) \
+[12] UniProt, [https://www.uniprot.org/](https://www.uniprot.org/) \
+[13] UMLS, [https://www.nlm.nih.gov/research/umls/index.html](https://www.nlm.nih.gov/research/umls/index.html) \
+[14] dbSNP, [https://www.ncbi.nlm.nih.gov/snp/](https://www.ncbi.nlm.nih.gov/snp/)
 
