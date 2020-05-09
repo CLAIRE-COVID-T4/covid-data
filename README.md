@@ -96,7 +96,7 @@ All proteins are denoted by their Entrez IDs.
 - `Ontology Term Categories` --> the official ontology term category, if ontology terms are recorded for the interaction
 - `Ontology Term Qualifier IDs` --> additional qualifying term IDs associated with `TREMBL Accessions Interactor B`
 - `Ontology Term Qualifier Names` --> additional qualifying term names associated with `REFSEQ Accessions Interactor B`
-- `Ontology Term Types` --> additional type for terms classified as phenotypes
+- `Ontology Term Types` --> additional types for terms classified as phenotypes
 
 ## Clustering: how-to
 
