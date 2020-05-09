@@ -60,44 +60,43 @@ A collection of drug-drug combinations with the following columns:
 
 All the files in this folder contain the Virus-Virus, Virus-Human, and Human-Human PPIs related to a specific virus (e.g., SARS-CoV, SARS-CoV-2, MERS-CoV, HIV, etc).
 All proteins are denoted by their Entrez IDs.
-- `BioGRID Interaction ID` --> TODO
-- `Entrez Gene Interactor A` --> TODO
-- `Entrez Gene Interactor B` --> TODO
-- `BioGRID ID Interactor A` --> TODO
-- `BioGRID ID Interactor B` --> TODO
-- `Systematic Name Interactor A` --> TODO
-- `Systematic Name Interactor B` --> TODO 
-- `Official Symbol Interactor A` --> TODO
-- `Official Symbol Interactor B` --> TODO
-- `Synonyms Interactor A` --> TODO
-- `Synonyms Interactor B` --> TODO
-- `Experimental System` --> TODO
-- `Experimental System Type` --> TODO
-- `Author` --> TODO
-- `Publication Source` --> TODO
-- `Organism ID Interactor A` --> TODO
-- `Organism Name Interactor A` --> TODO
-- `Organism ID Interactor B` --> TODO
-- `Organism Name Interactor B` --> TODO
-- `Throughput` --> TODO
-- `Score` --> TODO
-- `Modification` --> TODO
-- `Qualifications` --> TODO
-- `Tags` --> TODO
-- `Source` --> TODO
-- `Database` --> TODO
-- `SWISS-PROT Accessions Interactor A` --> TODO
-- `TREMBL Accessions Interactor A` --> TODO
-- `REFSEQ Accessions Interactor A` --> TODO
-- `SWISS-PROT Accessions Interactor B` --> TODO
-- `TREMBL Accessions Interactor B` --> TODO
-- `REFSEQ Accessions Interactor B` --> TODO
-- `Ontology Term IDs` --> TODO
-- `Ontology Term Names` --> TODO
-- `Ontology Term Categories` --> TODO
-- `Ontology Term Qualifier IDs` --> TODO
-- `Ontology Term Qualifier Names` --> TODO
-- `Ontology Term Types` --> TODO
+- `BioGRID Interaction ID` --> the BioGRID ID for the interaction
+- `Entrez Gene Interactor A` --> the Entrez Gene database ID for Interactor A
+- `Entrez Gene Interactor B` --> the Entrez Gene database ID for Interactor B
+- `BioGRID ID Interactor A` --> the BioGRID ID for Interactor A
+- `BioGRID ID Interactor B` --> the BioGRID ID for Interactor B
+- `Systematic Name Interactor A` --> a plain text systematic name if known for Interactor A
+- `Systematic Name Interactor B` --> a plain text systematic name if known for Interactor B
+- `Official Symbol Interactor A` --> a common gene name/official symbol for Interactor A
+- `Official Symbol Interactor B` --> a common gene name/official symbol for Interactor B
+- `Synonyms Interactor A` --> list of aliases for Interactor A
+- `Synonyms Interactor B` --> list of aliases for Interactor B
+- `Experimental System` --> the [Experimental Evidence Codes](https://wiki.thebiogrid.org/doku.php/experimental_systems) supported by the BioGRID
+- `Experimental System Type` --> the type of the Experimental Evidence Codes
+- `Author` --> the first author surname of the publication in which the interaction has been shown
+- `Publication Source` --> the publication source in which the interaction has been shown, with format `SOURCE:ID`
+- `Organism ID Interactor A` --> the NCBI Taxonomy ID for Interactor A
+- `Organism Name Interactor A` --> the NCBI Taxonomy Name for Interactor A
+- `Organism ID Interactor B` --> the NCBI Taxonomy ID for Interactor B
+- `Organism Name Interactor B` --> the NCBI Taxonomy Name for Interactor B
+- `Throughput` --> the interaction throughput type: high, low, both
+- `Score` --> the quantitative score recorded by the original publication depicting P-Values, Confidence Score, SGA Score, etc.
+- `Modification` --> the Post Translational Modification for any Biochemical Activity experiments
+- `Qualifications` --> additional plain text recorded for interaction
+- `Tags` --> additional tag that classified the interaction
+- `Source Database` --> the database name in which the interaction was provided
+- `SWISS-PROT Accessions Interactor A` --> one or more matching swiss-prot accessions for Interactor A
+- `TREMBL Accessions Interactor A` --> one or more matching trembl accessions for Interactor A
+- `REFSEQ Accessions Interactor A` --> one or more matching refseq accessions for Interactor A
+- `SWISS-PROT Accessions Interactor B` --> one or more matching swiss-prot accessions for Interactor B
+- `TREMBL Accessions Interactor B` --> one or more matching trembl accessions for Interactor B
+- `REFSEQ Accessions Interactor B` --> one or more matching refseq accessions for Interactor B
+- `Ontology Term IDs` --> the official ontology term ids, if ontology terms are recorded for the interaction
+- `Ontology Term Names` --> the official ontology term name associated with the Ontology Term ID, if ontology terms are recorded for the interaction
+- `Ontology Term Categories` --> the official ontology term category, if ontology terms are recorded for the interaction
+- `Ontology Term Qualifier IDs` --> additional qualifying term IDs associated with `TREMBL Accessions Interactor B`
+- `Ontology Term Qualifier Names` --> additional qualifying term names associated with `REFSEQ Accessions Interactor B`
+- `Ontology Term Types` --> additional type for terms classified as phenotypes
 
 ## Clustering: how-to
 
