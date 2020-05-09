@@ -120,6 +120,11 @@ This file contains Gene-Disease associations from various resources such as UniP
 - `NofSnps` --> total number of SNPs associated to the Gene-Disease association
 - `source` --> original source reporting the Gene-Disease association
 
+Note that:
+- `diseaseType` can be one of the following pathologies: "disease", "Group" (set of diseases), "phenotype" (malformations)
+- `score` is confidence score in the range [0,1]
+- `source` indicates the sources related to the specific association (can be many)
+- `NofPmids` is the number of evidences in the literature that report the specific association
 
 #### `diseases/disgenet/disease_mappings.tab`
 Mappings from UMLS concept unique identifier to disease vocabularies: DO, EFO, HPO, ICD9CM, MSH, NCI, OMIM, and ORDO. The columns are:
@@ -148,17 +153,61 @@ This file contains the disease gene associations provided by [8]. Each line cont
 - `OMIM_genes` --> comma-separated list of OMIM genes
 - `GWAS_genes` --> comma-separated list of GWAS genes
 
+
+#### `uniprot_features/domains.tab`
+
+## TODO
+Il file "domains" contiene associazioni geni-domini (separatore ";") e geni-famiglie (separatore ",").
+I domini sono forme che la proteina usa per interagire con altre proteine con dominio complementare (si pensi all'incastro di due pezzi di puzzle). 
+Le famiglie sono gruppi di proteine; un gruppo è definito da aspetti biologici comuni tra le proteine. 
+Le famiglie e i domini sono spesso correlati fra di loro.
+
+The columns are:
+- `Entry` --> TODO	
+- `Entrez ID` --> TODO
+- `Entry name` --> TODO
+- `Domain` --> TODO
+- `[FT]` --> TODO
+- `Protein families` --> TODO 
+
+
+#### `uniprot_features/gene-drug_associations.tab`
+
+## TODO
+Il file "gene-drug_associations" contiene diverse associazioni gene-drug (drug di DrugBank). Le drug sono separate da ";".
+
+The columns are:
+- `Entry` --> TODO
+- `Entrez ID` --> TODO
+- `Entry name` --> TODO
+- `DrugBank` --> TODO
+
+
+#### `uniprot_features/gene-pathways_associations.tab`
+
+## TODO
+il file "gene-pathways_associations" contiene associazioni tra geni e i loro pathways.
+I pathways sono processi/eventi chimici e biologici che possono coinvolgere proteine. 
+Ad esempio esistono pathways metabolici.
+
+The columns are:
+- `Entry` --> TODO
+- `Entrez ID` --> TODO
+- `Entry name` --> TODO
+- `Reactome` --> TODO
+
+
 ## Clustering: how-to
 
 To reproduce the procedure that generates clusters of the GO-terms, please do as follows:
 
-#TODO
+##TODO
 
 ## Node2vec: how-to
 
 To reproduce the procedure that generates GO-terms embeddings using node2vec, please do as follows:
 
-#TODO
+##TODO
 
 ## Nomenclature
 
