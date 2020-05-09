@@ -1,25 +1,133 @@
 # COVID Datasets
- Collection of COVID-related datasets useful for drug-repurposing tasks.
+A collection of COVID-related datasets useful for drug-repurposing tasks. See the [**Nomenclature**](#nomenclature) section for an explanation of the terms used.
 
-## Contents
+## Content Summary
 
 Apart from `drug-structures.sdf`, All files are in TSV format (Tab-Separated Values), where the first line contains the column names. The file contents are:
 
- - `host-host.tab`: a collection of Human Protein-Protein Interactions (PPI), from [1]. The two columns of this file contains the Entrez IDs of the two interacting proteins.
- - `drug-host.tab`: a collection of experimentally validated Drug-Protein interaction, from [1]. The two columns of this file contain, respectively, the DrugBank ID of the drug and the Entrez ID of the Human protein targeted by the drug.
- - `drug-drug.tab`: a collection of Drug-Drug interaction, from [1]. Other than the two DrugBank IDs contained in the first two colums, this file contain a third column (`Adverse`) that specifies if
+ - `host-host.tab`: a collection of Human Protein-Protein Interactions, from [1].
+ - `drug-host.tab`: a collection of experimentally validated Drug-Protein interaction, from [1].
+ - `drug-drug.tab`: a collection of Drug-Drug interaction, from [1].
+ - `go-terms.tab`: Gene Ontology (GO) terms associated to each Human protein contained in `host-host.tab`.
+ - `drug-structures.sdf`: drug Structure-Data File (SDF), from the open-data collection of [3].
+ - `virus-host/*.tab`: collection of various Human viruses, from [4].
 
-   - the two drugs produce a clinically-reported adverse interaction (`Y`);
-   - the two drugs produce a experimentally validated combination (`N`).
 
- - `go-terms.tab`: Gene Ontology (GO) terms associated to each Human protein contained in `host-host.tab`. This file contains also other information regarding each GO term, as its GO ID, or its category (`Process`, `Function`, or `Component`).
- - `drug-structures.sdf`: drug Structure-Data File (SDF), from the open-data collection of [3]. This file contains the 3D structures of a subset of the drugs listed in `drug-host.tab` (i.e. the ones downloadable without registration).
- - `virus-host/*.tab`: collection of various Human viruses, from [4]. All the files in this folder contain the Virus-Virus, Virus-Human, and Human-Human PPIs related to a specific virus (e.g., SARS-CoV, SARS-CoV-2, MERS-CoV, HIV, etc). All proteins are denoted by their Entrez IDs.
+## Content Details
+
+This section describes the content of the files in the `data` folder.
+
+#### `drug-drug.tab`
+A collection of drug-drug combinations with the following columns:
+
+- `DrugBank Interactor A` --> the DrugBank ID of the first drug
+- `DrugBank Interactor B` --> the DrugBank ID of the second drug 
+- `Adverse` --> a boolean value `N` or `Y` where
+    - `N`: the two drugs produce an experimentally validated combination
+    - `Y`: the two drugs produce a clinically-reported adverse interaction
+
+#### `drug-host.tab`
+A collection of drug-protein interactions with the following columns:
+- `DrugBank` --> the DrugBank ID of the drug
+- `Target Entrez Gene` --> the Entrez ID of the gene associated with the protein
+
+#### `drug-structures.sdf`
+The [SDF](https://en.wikipedia.org/wiki/Chemical_table_file) file of all the drugs listed in `drug-host.tab` (i.e. the ones downloadable with and without registration to the DrugBank service). This file describes the 3D structure of the drug and provides additional information such as:
+- `DrugBank ID`
+- `Secondary Accession Numbers`
+- `Common Name`
+- `CAS Number`
+- `Synonyms`
+
+#### `go-terms.tab`
+A collection of GO terms. There can be more than one GO term associated with a specific gene. The file has the following columns:
+- `Entrez Gene` --> the Entrez ID of the gene
+- `GO ID` --> the GO term ID associated with the gene
+- `Evidence` --> the code that indicates how the annotation to a particular term is supported. For more information see the [official guide](http://geneontology.org/docs/guide-go-evidence-codes/).
+- `Qualifier` --> the annotation qualifier. For more information see the [official guide](http://geneontology.org/docs/go-annotations/).
+- `GO Term` --> the name of the GO term
+- `PubMed` --> the publication ID in the PubMed database [5]. 
+- `Category` --> Can be `Function`, `Process` or `Component`
+
+#### `host-host.tab`
+A collection of drug-drug combinations with the following columns:
+
+- `Entrez Gene Interactor A` --> the Entrez ID of the first gene
+- `Entrez Gene Interactor B` --> the Entrez ID of the second gene 
+
+
+#### `virus-host/*.tab`
+
+All the files in this folder contain the Virus-Virus, Virus-Human, and Human-Human PPIs related to a specific virus (e.g., SARS-CoV, SARS-CoV-2, MERS-CoV, HIV, etc).
+All proteins are denoted by their Entrez IDs.
+- `BioGRID Interaction ID` --> the BioGRID ID for the interaction
+- `Entrez Gene Interactor A` --> the Entrez Gene database ID for Interactor A
+- `Entrez Gene Interactor B` --> the Entrez Gene database ID for Interactor B
+- `BioGRID ID Interactor A` --> the BioGRID ID for Interactor A
+- `BioGRID ID Interactor B` --> the BioGRID ID for Interactor B
+- `Systematic Name Interactor A` --> a plain text systematic name if known for Interactor A
+- `Systematic Name Interactor B` --> a plain text systematic name if known for Interactor B
+- `Official Symbol Interactor A` --> a common gene name/official symbol for Interactor A
+- `Official Symbol Interactor B` --> a common gene name/official symbol for Interactor B
+- `Synonyms Interactor A` --> list of aliases for Interactor A
+- `Synonyms Interactor B` --> list of aliases for Interactor B
+- `Experimental System` --> the [Experimental Evidence Codes](https://wiki.thebiogrid.org/doku.php/experimental_systems) supported by the BioGRID
+- `Experimental System Type` --> the type of the Experimental Evidence Codes
+- `Author` --> the first author surname of the publication in which the interaction has been shown
+- `Publication Source` --> the publication source in which the interaction has been shown, with format `SOURCE:ID`
+- `Organism ID Interactor A` --> the NCBI Taxonomy ID for Interactor A
+- `Organism Name Interactor A` --> the NCBI Taxonomy Name for Interactor A
+- `Organism ID Interactor B` --> the NCBI Taxonomy ID for Interactor B
+- `Organism Name Interactor B` --> the NCBI Taxonomy Name for Interactor B
+- `Throughput` --> the interaction throughput type: high, low, both
+- `Score` --> the quantitative score recorded by the original publication depicting P-Values, Confidence Score, SGA Score, etc.
+- `Modification` --> the Post Translational Modification for any Biochemical Activity experiments
+- `Qualifications` --> additional plain text recorded for interaction
+- `Tags` --> additional tag that classified the interaction
+- `Source Database` --> the database name in which the interaction was provided
+- `SWISS-PROT Accessions Interactor A` --> one or more matching swiss-prot accessions for Interactor A
+- `TREMBL Accessions Interactor A` --> one or more matching trembl accessions for Interactor A
+- `REFSEQ Accessions Interactor A` --> one or more matching refseq accessions for Interactor A
+- `SWISS-PROT Accessions Interactor B` --> one or more matching swiss-prot accessions for Interactor B
+- `TREMBL Accessions Interactor B` --> one or more matching trembl accessions for Interactor B
+- `REFSEQ Accessions Interactor B` --> one or more matching refseq accessions for Interactor B
+- `Ontology Term IDs` --> the official ontology term ids, if ontology terms are recorded for the interaction
+- `Ontology Term Names` --> the official ontology term name associated with the Ontology Term ID, if ontology terms are recorded for the interaction
+- `Ontology Term Categories` --> the official ontology term category, if ontology terms are recorded for the interaction
+- `Ontology Term Qualifier IDs` --> additional qualifying term IDs associated with `TREMBL Accessions Interactor B`
+- `Ontology Term Qualifier Names` --> additional qualifying term names associated with `REFSEQ Accessions Interactor B`
+- `Ontology Term Types` --> additional types for terms classified as phenotypes
+
+## Clustering: how-to
+
+To reproduce the procedure that generates clusters of the GO-terms, please do as follows:
+
+#TODO
+
+## Node2vec: how-to
+
+To reproduce the procedure that generates GO-terms embeddings using node2vec, please do as follows:
+
+#TODO
+
+## Nomenclature
+
+- CAS Number: a unique numerical identifier assigned by the Chemical Abstracts Service (CAS) to every chemical substance described in the open scientific literature.
+- DrugBank ID: the identifier of a drug in the DrugBank database [3].
+- Entrez ID: the identifier of a gene in the NCBI Entrez database [7].
+- Gene-Ontology (GO) term: identifier of an entry in the Gene Ontology database [6], which contains information on the functions of genes.
+- Secondary Accession Numbers: additional identifiers for the same drug.
+- Structure-Data File (SDF): a [standardized format](https://en.wikipedia.org/wiki/Chemical_table_file) to represent the 3d structure of a compound. It wraps the [MDL Molfile](https://en.wikipedia.org/wiki/Chemical_table_file#Molfile) format.
+- PPI: Protein-Protein Interactions.
+- PubMed: Biomedical literature database service [5].
 
 ## References
 
 [1] Cheng, F., Kovács, I.A. & Barabási, A. Network-based prediction of drug combinations. Nat Commun 10, 1197 (2019), [https://doi.org/10.1038/s41467-019-09186-x](https://doi.org/10.1038/s41467-019-09186-x) \
 [2] National Center for Biotechnology Information (NCBI), [https://www.ncbi.nlm.nih.gov/](https://www.ncbi.nlm.nih.gov/) \
 [3] DrugBank, [https://www.drugbank.ca/](https://www.drugbank.ca/) \
-[4] BioGrid, [https://thebiogrid.org/](https://thebiogrid.org/) 
+[4] BioGrid, [https://thebiogrid.org/](https://thebiogrid.org/) \
+[5] PubMed, [https://pubmed.ncbi.nlm.nih.gov/](https://pubmed.ncbi.nlm.nih.gov/) \
+[6] Gene Ontology, [http://geneontology.org/](http://geneontology.org/) \
+[7] NCBI , [https://www.ncbi.nlm.nih.gov/gene](https://www.ncbi.nlm.nih.gov/gene)
 
