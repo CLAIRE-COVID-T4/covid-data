@@ -139,9 +139,10 @@ Variants mapped to their corresponding genes, according to dbSNP. The columns ar
 - `geneSymbol` --> Official Gene Symbol
 
 #### `diseases/disgenet/entrez2uniprot.tab`
-Mapping from UniProt knowledge base (UniProtKB) to genes Entrez IDs: The columns are:
+Mapping from UniProt knowledge base (UniProtKB) to genes Entrez IDs. The columns are:
+
 - `UniProtKB` --> UniProtKB Identifier
-- `GENEID` --> A gene's Entrez ID
+- `GENEID` --> the gene Entrez ID
 
 #### `diseases/menche_disease_genes.tab`
 This file contains the disease gene associations provided by [8]. Each line contains the genes (gene IDs) associated with one disease. The columns are:
@@ -153,48 +154,30 @@ This file contains the disease gene associations provided by [8]. Each line cont
 - `OMIM_genes` --> comma-separated list of OMIM genes
 - `GWAS_genes` --> comma-separated list of GWAS genes
 
-
 #### `uniprot_features/domains.tab`
+This file contains genes-domains and genes-families associations. Each line contains the genes associated with one or more domains and families. The columns are:
 
-## TODO
-Il file "domains" contiene associazioni geni-domini (separatore ";") e geni-famiglie (separatore ",").
-I domini sono forme che la proteina usa per interagire con altre proteine con dominio complementare (si pensi all'incastro di due pezzi di puzzle). 
-Le famiglie sono gruppi di proteine; un gruppo è definito da aspetti biologici comuni tra le proteine. 
-Le famiglie e i domini sono spesso correlati fra di loro.
-
-The columns are:
-- `Entry` --> TODO	
-- `Entrez ID` --> TODO
-- `Entry name` --> TODO
-- `Domain` --> TODO
-- `[FT]` --> TODO
-- `Protein families` --> TODO 
-
+- `Entry` --> the UniProtKB Identifier
+- `Entrez ID` --> the gene Entrez ID
+- `Entry name` --> the gene name
+- `Domain [FT]` --> semicolon-separated list of domains
+- `Protein families` --> comma-separated list of families
 
 #### `uniprot_features/gene-drug_associations.tab`
+This file contains the gene-drug associations with the following columns:
 
-## TODO
-Il file "gene-drug_associations" contiene diverse associazioni gene-drug (drug di DrugBank). Le drug sono separate da ";".
-
-The columns are:
-- `Entry` --> TODO
-- `Entrez ID` --> TODO
-- `Entry name` --> TODO
-- `DrugBank` --> TODO
-
+- `Entry` --> the UniProtKB Identifier
+- `Entrez ID` --> the gene Entrez ID
+- `Entry name` --> the gene name
+- `DrugBank` --> list of DrugBank IDs associated with the gene
 
 #### `uniprot_features/gene-pathways_associations.tab`
+This file contains the gene-pathways associations. The columns are:
 
-## TODO
-il file "gene-pathways_associations" contiene associazioni tra geni e i loro pathways.
-I pathways sono processi/eventi chimici e biologici che possono coinvolgere proteine. 
-Ad esempio esistono pathways metabolici.
-
-The columns are:
-- `Entry` --> TODO
-- `Entrez ID` --> TODO
-- `Entry name` --> TODO
-- `Reactome` --> TODO
+- `Entry` --> the UniProtKB Identifier
+- `Entrez ID` --> the gene Entrez ID
+- `Entry name` --> the gene name
+- `Reactome` --> list of [reactome](https://reactome.org/) pathways IDs associated with the gene
 
 
 ## Clustering: how-to
