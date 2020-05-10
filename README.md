@@ -123,7 +123,7 @@ This file contains Gene-Disease associations from various resources such as UniP
 - `source` --> original source reporting the Gene-Disease association
 
 Note that:
-- `diseaseType` can be one of the following pathologies: "disease", "Group" (set of diseases), "phenotype" (malformations)
+- `diseaseType` can be one of the following pathologies: "disease", "Group" (set of diseases), "phenotype"
 - `score` is confidence score in the range [0,1]
 - `source` indicates the sources related to the specific association (can be many)
 - `NofPmids` is the number of evidences in the literature that report the specific association
@@ -162,8 +162,8 @@ This file contains genes-domains and genes-families associations. Each line cont
 - `Entry` --> the UniProtKB Identifier
 - `Entrez ID` --> the gene Entrez ID
 - `Entry name` --> the gene name
-- `Domain [FT]` --> semicolon-separated list of domains
-- `Protein families` --> comma-separated list of families
+- `Domain [FT]` --> semicolon-separated list of domains (see https://www.uniprot.org/help/domain)
+- `Protein families` --> comma-separated list of families (see https://www.uniprot.org/help/family_membership)
 
 #### `uniprot_features/gene-drug_associations.tab`
 This file contains the gene-drug associations with the following columns:
@@ -171,7 +171,7 @@ This file contains the gene-drug associations with the following columns:
 - `Entry` --> the UniProtKB Identifier
 - `Entrez ID` --> the gene Entrez ID
 - `Entry name` --> the gene name
-- `DrugBank` --> list of DrugBank IDs associated with the gene
+- `DrugBank` --> semicolon-separated list of DrugBank IDs associated with the gene (see https://www.uniprot.org/database/DB-0019)
 
 #### `uniprot_features/gene-pathways_associations.tab`
 This file contains the gene-pathways associations. The columns are:
@@ -179,7 +179,7 @@ This file contains the gene-pathways associations. The columns are:
 - `Entry` --> the UniProtKB Identifier
 - `Entrez ID` --> the gene Entrez ID
 - `Entry name` --> the gene name
-- `Reactome` --> list of [reactome](https://reactome.org/) pathways IDs associated with the gene
+- `Reactome` --> semicolon-separated list of [reactome](https://reactome.org/) pathways IDs associated with the gene
 
 
 ## Clustering: how-to
