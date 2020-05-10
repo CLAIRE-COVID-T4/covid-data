@@ -3,7 +3,7 @@ A collection of COVID-related datasets useful for drug-repurposing tasks. See th
 
 ## Content Summary
 
-Apart from `drug-structures.sdf`, All files are in TSV format (Tab-Separated Values), where the first line contains the column names. The file contents are:
+Apart from `drug-structures.sdf`, all data files are in TSV format (Tab-Separated Values), where the first line contains the column names. The file contents are:
 
  - `host-host.tab`: a collection of Human Protein-Protein Interactions, from [1].
  - `drug-host.tab`: a collection of experimentally validated Drug-Protein interaction, from [1].
@@ -14,6 +14,7 @@ Apart from `drug-structures.sdf`, All files are in TSV format (Tab-Separated Val
  - `diseases/`: a collection of gene to disease mappings
  - `uniprot_features`: additional gene features gathered from UniProt [12]
 
+In the `clustering` and `node2vec` folders you will find the code used to create compact representations of the GO-terms. 
 
 ## Content Details
 
