@@ -28,3 +28,8 @@ This file contains the results of the application of DBScan to cluster the node 
 This files contains the composition of each cluster found by DBScan. Is is formatted as follows:
 - the first line contains an integer representing the number of clusters found;
 - the remanining lines contain a variable-size list of integers separated by spaces. The first integer is the cluster label where -1 means unclustered), while the other integers are the GO ids of the terms in that cluster.
+
+
+#### Reproducibility
+
+Code to reproduce both the node2vec and DBScan analyses can be found [here](https://github.com/CLAIRE-COVID-T4/covid-data/tree/master/code).
