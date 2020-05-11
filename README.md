@@ -184,7 +184,11 @@ This file contains the gene-pathways associations. The columns are:
 
 ## Clustering and Node2vec: how-to
 
-See README in the `code` folder.
+See [README](https://github.com/CLAIRE-COVID-T4/covid-data/tree/master/code#code-to-reproduce-node2vec-and-dbscan-analysis-of-go-terms) in the `code` folder.
+
+#### data_GO_terms
+This folder contains the result of the computation of the GO terms embeddings, with dimension 128, and clustering.
+See [README](https://github.com/CLAIRE-COVID-T4/covid-data/tree/master/data_GO_terms#gene-ontology-go-terms-embeddings-and-clustering) in `data_GO_terms` for more information.
 
 ## Nomenclature
 
