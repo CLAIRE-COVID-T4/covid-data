@@ -1,8 +1,8 @@
 ## Gene Ontology (GO) Terms embeddings and clustering
 This folder contains 3 files for each different Gene Ontology (Biological Process, Cellular Component, and Molecular Function):
 - the node embeddings of the associated Gene Ontology Directed Acyclic Graph (DAG) obtained with Node2vec;
-- the results of a DBScan clustering on the node embeddings;
-- the composition of each cluster found by DBScan.
+- the results of a HDBScan clustering on the node embeddings;
+- the composition of each cluster found by HDBScan.
 
 We use the following placeholders for clarity:
 - `<namespace>` is one among `biological_process`, `cellular_component` and `molecular_function`;
@@ -18,18 +18,18 @@ This file contains the node embeddings. It is formatted as follows:
 
 #### File `<namespace>_emb_<dimension>_cluster_data.txt`
 
-This file contains the results of the application of DBScan to cluster the node embeddings. It is formatted as follows:
+This file contains the results of the application of HDBScan  clustering to the node embeddings. It is formatted as follows:
 - the first line contains two integers separated by spaces, which specify the number of rows and columns of the file;
 - the remaining lines contain three numbers separated by spaces: the first one is an integer representing the GO id of the embedded node; the second one represents the cluster label assigned to the point (where -1 means unclustered); the third one indicates the probability [TODO: Giovanni]
 
 
 #### File `<namespace>_emb_<dimension>_cluster_composition.txt`
 
-This files contains the composition of each cluster found by DBScan. Is is formatted as follows:
+This files contains the composition of each cluster found by HDBScan. Is is formatted as follows:
 - the first line contains an integer representing the number of clusters found;
-- the remanining lines contain a variable-size list of integers separated by spaces. The first integer is the cluster label where -1 means unclustered), while the other integers are the GO ids of the terms in that cluster.
+- the remanining lines contain a variable-size list of integers separated by spaces. The first integer is the cluster label where -1 means unclustered, while the other integers are the GO ids of the terms in that cluster.
 
 
 #### Reproducibility
 
-Code to reproduce both the node2vec and DBScan analyses can be found [here](https://github.com/CLAIRE-COVID-T4/covid-data/tree/master/code).
+Code to reproduce both the node2vec and HDBScan analyses can be found [here](https://github.com/CLAIRE-COVID-T4/covid-data/tree/master/code).
