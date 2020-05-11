@@ -182,17 +182,9 @@ This file contains the gene-pathways associations. The columns are:
 - `Reactome` --> semicolon-separated list of [reactome](https://reactome.org/) pathways IDs associated with the gene
 
 
-## Clustering: how-to
+## Clustering and Node2vec: how-to
 
-To reproduce the procedure that generates clusters of the GO-terms, please do as follows:
-
-##TODO
-
-## Node2vec: how-to
-
-To reproduce the procedure that generates GO-terms embeddings using node2vec, please do as follows:
-
-##TODO
+See README in the `code` folder.
 
 ## Nomenclature
 
