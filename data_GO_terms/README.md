@@ -33,3 +33,7 @@ This files contains the composition of each cluster found by HDBScan. Is is form
 #### Reproducibility
 
 Code to reproduce both the node2vec and HDBScan analyses can be found [here](https://github.com/CLAIRE-COVID-T4/covid-data/tree/master/code).
+
+### Validation
+
+Interactive plots of the clusters' localization in the Gene Ontology (GO) [here](https://drive.google.com/drive/folders/1v0K1lTmUW9UKr4O4vURB_98Pv3tusccK?usp=sharing).
