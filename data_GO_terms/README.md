@@ -36,4 +36,4 @@ Code to reproduce both the node2vec and HDBScan analyses can be found [here](htt
 
 ### Validation
 
-Interactive plots of the clusters' localization in the Gene Ontology (GO) [here](https://drive.google.com/drive/folders/1v0K1lTmUW9UKr4O4vURB_98Pv3tusccK?usp=sharing).
+Clusters' interactive plots  (with their localization among the Gene Ontology (GO)) can be downloaded: [here](https://drive.google.com/drive/folders/1v0K1lTmUW9UKr4O4vURB_98Pv3tusccK?usp=sharing).
