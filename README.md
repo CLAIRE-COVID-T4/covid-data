@@ -14,7 +14,7 @@ Apart from `drug-structures.sdf`, all data files are in TSV format (Tab-Separate
  - `diseases/`: a collection of gene to disease mappings
  - `uniprot_features`: additional gene features gathered from UniProt [12]
 
-In the `clustering` and `node2vec` folders you will find the code used to create compact representations of the GO-terms. 
+In the `code` folder you will find the code used to create compact representations of the GO-terms. Instead, in the `data_GO_terms` folder you will find the generated clusters and embeddings.
 
 ## Content Details
 
@@ -223,5 +223,6 @@ See [README](https://github.com/CLAIRE-COVID-T4/covid-data/tree/master/data_GO_t
 [11] DisGeNET, [http://www.disgenet.org](http://www.disgenet.org) \
 [12] UniProt, [https://www.uniprot.org/](https://www.uniprot.org/) \
 [13] UMLS, [https://www.nlm.nih.gov/research/umls/index.html](https://www.nlm.nih.gov/research/umls/index.html) \
-[14] dbSNP, [https://www.ncbi.nlm.nih.gov/snp/](https://www.ncbi.nlm.nih.gov/snp/)
+[14] dbSNP, [https://www.ncbi.nlm.nih.gov/snp/](https://www.ncbi.nlm.nih.gov/snp/) \
+[15] Aditya, G., and Leskovec, J. node2vec: Scalable feature learning for networks. Proceedings of the 22nd ACM SIGKDD international conference on Knowledge discovery and data mining. 2016.
 
