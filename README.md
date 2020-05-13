@@ -35,7 +35,7 @@ A collection of drug-protein interactions with the following columns:
 - `EntrezGeneID` --> the Entrez ID of the gene associated with the protein targeted by the drug
 
 #### `drug-structures.sdf`
-The [SDF](https://en.wikipedia.org/wiki/Chemical_table_file) file of *almost* all the drugs listed in `drug-host.tab` (i.e. the ones downloadable with and without registration to the DrugBank service, that amount to 4283 over 4428 drugs). This file contains the 2D structure of the drugs indexed by their DrugBank ID, providing also additional information such as:
+The [SDF](https://en.wikipedia.org/wiki/Chemical_table_file) file of drug structures containing 10674 distinct drugs (11151 with aliases), and *almost* all the drugs listed in `drug-host.tab` (i.e. the ones downloadable with and without registration to the DrugBank service, that amount to 4283 of the 4428 drugs). This file contains the 2D structure of the drugs indexed by their DrugBank ID, providing also additional information such as:
 - `Secondary Accession Numbers`
 - `Common Name`
 - `CAS Number`
