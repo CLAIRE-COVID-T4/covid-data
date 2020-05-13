@@ -23,16 +23,16 @@ This section describes the content of the files in the `data` folder.
 #### `drug-drug.tab`
 A collection of drug-drug combinations with the following columns:
 
-- `DrugBank Interactor A` --> the DrugBank ID of the first drug
-- `DrugBank Interactor B` --> the DrugBank ID of the second drug 
+- `DrugBankID_InteractorA` --> the DrugBank ID of the first drug
+- `DrugBankID_InteractorB` --> the DrugBank ID of the second drug
 - `Adverse` --> a boolean value `N` or `Y` where
     - `N`: the two drugs produce an experimentally validated combination
     - `Y`: the two drugs produce a clinically-reported adverse interaction
 
 #### `drug-host.tab`
 A collection of drug-protein interactions with the following columns:
-- `DrugBank` --> the DrugBank ID of the drug
-- `Entrez Gene` --> the Entrez ID of the gene associated with the protein targeted by the drug
+- `DrugBankID` --> the DrugBank ID of the drug
+- `EntrezGeneID` --> the Entrez ID of the gene associated with the protein targeted by the drug
 
 #### `drug-structures.sdf`
 The [SDF](https://en.wikipedia.org/wiki/Chemical_table_file) file of *almost* all the drugs listed in `drug-host.tab` (i.e. the ones downloadable with and without registration to the DrugBank service, that amount to 4283 over 4428 drugs). This file contains the 2D structure of the drugs indexed by their DrugBank ID, providing also additional information such as:
@@ -43,92 +43,98 @@ The [SDF](https://en.wikipedia.org/wiki/Chemical_table_file) file of *almost* al
 
 #### `go-terms.tab`
 A collection of GO terms. There can be more than one GO term associated with a specific gene. The file has the following columns:
-- `Entrez Gene` --> the Entrez ID of the gene
-- `GO ID` --> the GO term ID associated with the gene
+- `EntrezGeneID` --> the Entrez ID of the gene
+- `GOID` --> the GO term ID associated with the gene
 - `Evidence` --> the code that indicates how the annotation to a particular term is supported. For more information see the [official guide](http://geneontology.org/docs/guide-go-evidence-codes/).
 - `Qualifier` --> the annotation qualifier. For more information see the [official guide](http://geneontology.org/docs/go-annotations/).
-- `GO Term` --> the name of the GO term
-- `PubMed` --> the publication ID in the PubMed database [5]. 
+- `GOTerm` --> the name of the GO term
+- `PubMed` --> the publication ID in the PubMed database [5].
 - `Category` --> Can be `Function`, `Process` or `Component`
 
 #### `host-host.tab`
 A collection of drug-drug combinations with the following columns:
 
-- `Entrez Gene Interactor A` --> the Entrez ID of the first gene
-- `Entrez Gene Interactor B` --> the Entrez ID of the second gene 
+- `EntrezGeneID_InteractorA` --> the Entrez ID of the first gene
+- `EntrezGeneID_InteractorB` --> the Entrez ID of the second gene
 
 
 #### `virus-host/*.tab`
 
 All the files in this folder contain the Virus-Virus, Virus-Human, and Human-Human PPIs related to a specific virus (e.g., SARS-CoV, SARS-CoV-2, MERS-CoV, HIV, etc).
 All proteins are denoted by their Entrez IDs.
-- `BioGRID Interaction ID` --> the BioGRID ID for the interaction
-- `Entrez Gene Interactor A` --> the Entrez Gene database ID for Interactor A
-- `Entrez Gene Interactor B` --> the Entrez Gene database ID for Interactor B
-- `BioGRID ID Interactor A` --> the BioGRID ID for Interactor A
-- `BioGRID ID Interactor B` --> the BioGRID ID for Interactor B
-- `Systematic Name Interactor A` --> a plain text systematic name if known for Interactor A
-- `Systematic Name Interactor B` --> a plain text systematic name if known for Interactor B
-- `Official Symbol Interactor A` --> a common gene name/official symbol for Interactor A
-- `Official Symbol Interactor B` --> a common gene name/official symbol for Interactor B
-- `Synonyms Interactor A` --> list of aliases for Interactor A
-- `Synonyms Interactor B` --> list of aliases for Interactor B
-- `Experimental System` --> the [Experimental Evidence Codes](https://wiki.thebiogrid.org/doku.php/experimental_systems) supported by the BioGRID
-- `Experimental System Type` --> the type of the Experimental Evidence Codes
+- `BioGRIDInteractionID` --> the BioGRID ID for the interaction
+- `EntrezGeneID_InteractorA` --> the Entrez Gene database ID for Interactor A
+- `EntrezGeneID_InteractorB` --> the Entrez Gene database ID for Interactor B
+- `BioGRIDID_InteractorA` --> the BioGRID ID for Interactor A
+- `BioGRIDID_InteractorB` --> the BioGRID ID for Interactor B
+- `SystematicName_InteractorA` --> a plain text systematic name if known for Interactor A
+- `SystematicName_InteractorB` --> a plain text systematic name if known for Interactor B
+- `OfficialSymbol_InteractorA` --> a common gene name/official symbol for Interactor A
+- `OfficialSymbol_InteractorB` --> a common gene name/official symbol for Interactor B
+- `Synonyms_InteractorA` --> list of aliases for Interactor A
+- `Synonyms_InteractorB` --> list of aliases for Interactor B
+- `ExperimentalSystem` --> the [Experimental Evidence Codes](https://wiki.thebiogrid.org/doku.php/experimental_systems) supported by the BioGRID
+- `ExperimentalSystemType` --> the type of the Experimental Evidence Codes
 - `Author` --> the first author surname of the publication in which the interaction has been shown
-- `Publication Source` --> the publication source in which the interaction has been shown, with format `SOURCE:ID`
-- `Organism ID Interactor A` --> the NCBI Taxonomy ID for Interactor A
-- `Organism Name Interactor A` --> the NCBI Taxonomy Name for Interactor A
-- `Organism ID Interactor B` --> the NCBI Taxonomy ID for Interactor B
-- `Organism Name Interactor B` --> the NCBI Taxonomy Name for Interactor B
+- `PublicationSource` --> the publication source in which the interaction has been shown, with format `SOURCE:ID`
+- `OrganismID_InteractorA` --> the NCBI Taxonomy ID for Interactor A
+- `OrganismName_InteractorA` --> the NCBI Taxonomy Name for Interactor A
+- `OrganismID_InteractorB` --> the NCBI Taxonomy ID for Interactor B
+- `OrganismName_InteractorB` --> the NCBI Taxonomy Name for Interactor B
 - `Throughput` --> the interaction throughput type: high, low, both
 - `Score` --> the quantitative score recorded by the original publication depicting P-Values, Confidence Score, SGA Score, etc.
 - `Modification` --> the Post Translational Modification for any Biochemical Activity experiments
 - `Qualifications` --> additional plain text recorded for interaction
 - `Tags` --> additional tag that classified the interaction
-- `Source Database` --> the database name in which the interaction was provided
-- `SWISS-PROT Accessions Interactor A` --> one or more matching swiss-prot accessions for Interactor A
-- `TREMBL Accessions Interactor A` --> one or more matching trembl accessions for Interactor A
-- `REFSEQ Accessions Interactor A` --> one or more matching refseq accessions for Interactor A
-- `SWISS-PROT Accessions Interactor B` --> one or more matching swiss-prot accessions for Interactor B
-- `TREMBL Accessions Interactor B` --> one or more matching trembl accessions for Interactor B
-- `REFSEQ Accessions Interactor B` --> one or more matching refseq accessions for Interactor B
-- `Ontology Term IDs` --> the official ontology term ids, if ontology terms are recorded for the interaction
-- `Ontology Term Names` --> the official ontology term name associated with the Ontology Term ID, if ontology terms are recorded for the interaction
-- `Ontology Term Categories` --> the official ontology term category, if ontology terms are recorded for the interaction
-- `Ontology Term Qualifier IDs` --> additional qualifying term IDs associated with `TREMBL Accessions Interactor B`
-- `Ontology Term Qualifier Names` --> additional qualifying term names associated with `REFSEQ Accessions Interactor B`
-- `Ontology Term Types` --> additional types for terms classified as phenotypes
+- `SourceDatabase` --> the database name in which the interaction was provided
+- `SWISSPROTAccessions_InteractorA` --> one or more matching swiss-prot accessions for Interactor A
+- `TREMBLAccessions_InteractorA` --> one or more matching trembl accessions for Interactor A
+- `REFSEQAccessions_InteractorA` --> one or more matching refseq accessions for Interactor A
+- `SWISSPROTAccessions_Interactor B` --> one or more matching swiss-prot accessions for Interactor B
+- `TREMBLAccessions_InteractorB` --> one or more matching trembl accessions for Interactor B
+- `REFSEQAccessions_InteractorB` --> one or more matching refseq accessions for Interactor B
+- `OntologyTermIDs` --> the official ontology term ids, if ontology terms are recorded for the interaction
+- `OntologyTermNames` --> the official ontology term name associated with the Ontology Term ID, if ontology terms are recorded for the interaction
+- `OntologyTermCategories` --> the official ontology term category, if ontology terms are recorded for the interaction
+- `OntologyTermQualifierIDs` --> additional qualifying term IDs associated with `TREMBL Accessions Interactor B`
+- `OntologyTermQualifierNames` --> additional qualifying term names associated with `REFSEQ Accessions Interactor B`
+- `OntologyTermTypes` --> additional types for terms classified as phenotypes
 
 
 #### `diseases/disgenet/curated_gene_disease_associations.tab`
 This file contains only the curated Gene-Disease associations from DisGeNET. These associations are collected from various resources such as UniProt, CGI, ClinGen, Genomics England Panel App, PsyGeNET, Orphanet, the HPO, and CTD (human data). See also [https://www.disgenet.org/dbinfo](https://www.disgenet.org/dbinfo). The columns are:
 
-- `Entrez Gene` --> NCBI Entrez Gene Identifier
-- `geneSymbol` --> Official Gene Symbol
+- `EntrezGeneID` --> NCBI Entrez Gene Identifier
+- `GeneSymbol` --> Official Gene Symbol
 - `DSI` -->	 the Disease Specificity Index for the gene
 - `DPI` -->	the Disease Pleiotropy Index for the gene
-- `diseaseId` --> UMLS concept unique identifier
-- `diseaseName` --> name of the disease	
-- `diseaseType` --> the DisGeNET disease type: disease, phenotype and group
-- `diseaseClass` --> the MeSH disease class(es)
-- `diseaseSemanticType` -->	the UMLS Semantic Type(s) of the disease
-- `score` --> DisGENET score for the Gene-Disease association (see https://www.disgenet.org/dbinfo)
+- `DiseaseID` --> UMLS concept unique identifier
+- `DiseaseName` --> name of the disease
+- `DiseaseType` --> the DisGeNET disease type: disease, phenotype and group
+- `DiseaseClass` --> the MeSH disease class(es)
+- `DiseaseSemanticType` -->	the UMLS Semantic Type(s) of the disease
+- `Score` --> DisGENET score for the Gene-Disease association (see https://www.disgenet.org/dbinfo)
 - `EI` --> the Evidence Index for the Gene-Disease association
 - `YearInitial` --> first time that the Gene-Disease association was reported
 - `YearFinal` --> last time that the Gene-Disease association was reported
 - `NofPmids` --> total number of publications reporting the Gene-Disease association
 - `NofSnps` --> total number of SNPs associated to the Gene-Disease association
-- `source` --> original source reporting the Gene-Disease association
+- `Source` --> original source reporting the Gene-Disease association
 
 Note that:
-- `diseaseType` can be one of the following pathologies: "disease", "Group" (set of diseases), "phenotype"
-- `score` is confidence score in the range [0,1]
-- `source` indicates the sources related to the specific association (can be many)
+- `DiseaseType` can be one of the following pathologies: "disease", "Group" (set of diseases), "phenotype"
+- `Score` is confidence score in the range [0,1]
+- `Source` indicates the sources related to the specific association (can be many)
 - `NofPmids` is the number of evidences in the literature that report the specific association
 
 #### `diseases/disgenet/disease_mappings.tab`
 Mappings from UMLS concept unique identifier to disease vocabularies: DO, EFO, HPO, ICD9CM, MSH, NCI, OMIM, and ORDO. The columns are:
+- `DiseaseID`
+- `Name`
+- `Vocabulary`
+- `Code`
+- `VocabularyName`
+
 - `snpId` --> dbSNP variant Identifier
 - `Entrez Gene` --> NCBI Entrez Gene Identifier
 - `geneSymbol` --> Official Gene Symbol
@@ -137,48 +143,48 @@ Mappings from UMLS concept unique identifier to disease vocabularies: DO, EFO, H
 Variants mapped to their corresponding genes, according to dbSNP. The columns are:
 - `snpId` --> dbSNP variant Identifier
 - `Entrez Gene` --> NCBI Entrez Gene Identifier
-- `geneSymbol` --> Official Gene Symbol
+- `GeneSymbol` --> Official Gene Symbol
 
-#### `diseases/disgenet/entrez2uniprot.tab`
+#### `diseases/disgenet/uniprot2entrez.tab`
 Mapping from UniProt knowledge base (UniProtKB) to genes Entrez IDs. The columns are:
 
-- `UniProtKB` --> UniProtKB Identifier
-- `Entrez Gene` --> the gene Entrez ID
+- `UniProtKBID` --> UniProtKB Identifier
+- `EntrezGeneID` --> the gene Entrez ID
 
 #### `diseases/menche_disease_genes.tab`
 This file contains the disease gene associations provided by [8]. Each line contains the genes (gene IDs) associated with one disease. The columns are:
 
-- `disease` --> name of the disease
-- `number_of_all_genes` --> number of all associated genes
-- `number_of_OMIM_genes` --> number of associated genes from OMIM
-- `number_of_GWAS_genes` --> number of associated genes from GWAS
-- `OMIM_Entrez_Genes` --> comma-separated list of OMIM genes in Entrez IDs
-- `GWAS_Entrez_Genes` --> comma-separated list of GWAS genes in Entrez IDs
+- `DiseaseName` --> name of the disease
+- `NumberOfAllGenes` --> number of all associated genes
+- `NumberOfONIMGenes` --> number of associated genes from OMIM
+- `NumberOfGWASGenes` --> number of associated genes from GWAS
+- `ONIMEntrezGeneIDs` --> comma-separated list of OMIM genes in Entrez IDs
+- `GWASEntrezGeneIDs` --> comma-separated list of GWAS genes in Entrez IDs
 
 #### `uniprot_features/domains.tab`
 This file contains genes-domains and genes-families associations. Each line contains the genes associated with one or more domains and families. The columns are:
 
-- `Entry` --> the UniProtKB Identifier
-- `Entrez Gene` --> the gene Entrez ID
-- `Entry name` --> the gene name
-- `Domain [FT]` --> semicolon-separated list of domains (see https://www.uniprot.org/help/domain)
-- `Protein families` --> comma-separated list of families (see https://www.uniprot.org/help/family_membership)
+- `UniProtKBID` --> the UniProtKB Identifier
+- `EntrezGeneID` --> the gene Entrez ID
+- `GeneSymbol` --> Official Gene Symbol
+- `Domain` --> semicolon-separated list of domains (see https://www.uniprot.org/help/domain)
+- `ProteinFamilies` --> comma-separated list of families (see https://www.uniprot.org/help/family_membership)
 
 #### `uniprot_features/gene-drug_associations.tab`
 This file contains the gene-drug associations with the following columns:
 
-- `Entry` --> the UniProtKB Identifier
-- `Entrez Gene` --> the gene Entrez ID
-- `Entry name` --> the gene name
-- `DrugBank` --> semicolon-separated list of DrugBank IDs associated with the gene (see https://www.uniprot.org/database/DB-0019)
+- `UniProtKBID` --> the UniProtKB Identifier
+- `EntrezGeneID` --> the gene Entrez ID
+- `GeneSymbol` --> Official Gene Symbol
+- `DrugBankIDs` --> semicolon-separated list of DrugBank IDs associated with the gene (see https://www.uniprot.org/database/DB-0019)
 
 #### `uniprot_features/gene-pathways_associations.tab`
 This file contains the gene-pathways associations. The columns are:
 
-- `Entry` --> the UniProtKB Identifier
-- `Entrez Gene` --> the gene Entrez ID
-- `Entry name` --> the gene name
-- `Reactome` --> semicolon-separated list of [reactome](https://reactome.org/) pathways IDs associated with the gene
+- `UniProtKBID` --> the UniProtKB Identifier
+- `EntrezGeneID` --> the gene Entrez ID
+- `GeneSymbol` --> Official Gene Symbol
+- `ReactomeIDs` --> semicolon-separated list of [reactome](https://reactome.org/) pathways IDs associated with the gene
 
 
 ## Clustering and Node2vec: how-to
