@@ -32,7 +32,7 @@ A collection of drug-drug combinations with the following columns:
 #### `drug-host.tab`
 A collection of drug-protein interactions with the following columns:
 - `DrugBank` --> the DrugBank ID of the drug
-- `EntrezID` --> the Entrez ID of the gene associated with the protein targeted by the drug
+- `Entrez Gene` --> the Entrez ID of the gene associated with the protein targeted by the drug
 
 #### `drug-structures.sdf`
 The [SDF](https://en.wikipedia.org/wiki/Chemical_table_file) file of all the drugs listed in `drug-host.tab` (i.e. the ones downloadable with and without registration to the DrugBank service). This file describes the 3D structure of the drug and provides additional information such as:
@@ -105,7 +105,7 @@ All proteins are denoted by their Entrez IDs.
 #### `diseases/disgenet/curated_gene_disease_associations.tab`
 This file contains Gene-Disease associations from various resources such as UniProt, CGI, ClinGen, Genomics England Panel App, PsyGeNET, Orphanet, the HPO, and CTD (human data). See also [https://www.disgenet.org/dbinfo](https://www.disgenet.org/dbinfo). The columns are:
 
-- `geneId` --> NCBI Entrez Gene Identifier
+- `Entrez Gene` --> NCBI Entrez Gene Identifier
 - `geneSymbol` --> Official Gene Symbol
 - `DSI` -->	 the Disease Specificity Index for the gene
 - `DPI` -->	the Disease Pleiotropy Index for the gene
@@ -131,20 +131,20 @@ Note that:
 #### `diseases/disgenet/disease_mappings.tab`
 Mappings from UMLS concept unique identifier to disease vocabularies: DO, EFO, HPO, ICD9CM, MSH, NCI, OMIM, and ORDO. The columns are:
 - `snpId` --> dbSNP variant Identifier
-- `geneId` --> NCBI Entrez Gene Identifier
+- `Entrez Gene` --> NCBI Entrez Gene Identifier
 - `geneSymbol` --> Official Gene Symbol
 
 #### `diseases/disgenet/variant_to_gene_mappings.tab`
 Variants mapped to their corresponding genes, according to dbSNP. The columns are:
 - `snpId` --> dbSNP variant Identifier
-- `geneId` --> NCBI Entrez Gene Identifier
+- `Entrez Gene` --> NCBI Entrez Gene Identifier
 - `geneSymbol` --> Official Gene Symbol
 
 #### `diseases/disgenet/entrez2uniprot.tab`
 Mapping from UniProt knowledge base (UniProtKB) to genes Entrez IDs. The columns are:
 
 - `UniProtKB` --> UniProtKB Identifier
-- `GENEID` --> the gene Entrez ID
+- `Entrez Gene` --> the gene Entrez ID
 
 #### `diseases/menche_disease_genes.tab`
 This file contains the disease gene associations provided by [8]. Each line contains the genes (gene IDs) associated with one disease. The columns are:
@@ -153,14 +153,14 @@ This file contains the disease gene associations provided by [8]. Each line cont
 - `number_of_all_genes` --> number of all associated genes
 - `number_of_OMIM_genes` --> number of associated genes from OMIM
 - `number_of_GWAS_genes` --> number of associated genes from GWAS
-- `OMIM_genes` --> comma-separated list of OMIM genes
-- `GWAS_genes` --> comma-separated list of GWAS genes
+- `OMIM_Entrez_Genes` --> comma-separated list of OMIM genes in Entrez IDs
+- `GWAS_Entrez_Genes` --> comma-separated list of GWAS genes in Entrez IDs
 
 #### `uniprot_features/domains.tab`
 This file contains genes-domains and genes-families associations. Each line contains the genes associated with one or more domains and families. The columns are:
 
 - `Entry` --> the UniProtKB Identifier
-- `Entrez ID` --> the gene Entrez ID
+- `Entrez_Gene` --> the gene Entrez ID
 - `Entry name` --> the gene name
 - `Domain [FT]` --> semicolon-separated list of domains (see https://www.uniprot.org/help/domain)
 - `Protein families` --> comma-separated list of families (see https://www.uniprot.org/help/family_membership)
@@ -169,7 +169,7 @@ This file contains genes-domains and genes-families associations. Each line cont
 This file contains the gene-drug associations with the following columns:
 
 - `Entry` --> the UniProtKB Identifier
-- `Entrez ID` --> the gene Entrez ID
+- `Entrez_Gene` --> the gene Entrez ID
 - `Entry name` --> the gene name
 - `DrugBank` --> semicolon-separated list of DrugBank IDs associated with the gene (see https://www.uniprot.org/database/DB-0019)
 
@@ -177,7 +177,7 @@ This file contains the gene-drug associations with the following columns:
 This file contains the gene-pathways associations. The columns are:
 
 - `Entry` --> the UniProtKB Identifier
-- `Entrez ID` --> the gene Entrez ID
+- `Entrez_Gene` --> the gene Entrez ID
 - `Entry name` --> the gene name
 - `Reactome` --> semicolon-separated list of [reactome](https://reactome.org/) pathways IDs associated with the gene
 
