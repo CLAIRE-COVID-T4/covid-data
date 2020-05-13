@@ -146,9 +146,9 @@ This file contains the disease gene associations provided by [8]. Each line cont
 
 - `DiseaseName` --> name of the disease
 - `NumberOfAllGenes` --> number of all associated genes
-- `NumberOfONIMGenes` --> number of associated genes from OMIM
+- `NumberOfOMIMGenes` --> number of associated genes from OMIM
 - `NumberOfGWASGenes` --> number of associated genes from GWAS
-- `ONIMEntrezGeneIDs` --> comma-separated list of OMIM genes in Entrez IDs
+- `OMIMEntrezGeneIDs` --> comma-separated list of OMIM genes in Entrez IDs
 - `GWASEntrezGeneIDs` --> comma-separated list of GWAS genes in Entrez IDs
 
 #### `uniprot_features/domains.tab`
