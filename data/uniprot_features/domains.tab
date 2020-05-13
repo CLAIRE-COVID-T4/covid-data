@@ -1,4 +1,4 @@
-Entry	Entrez ID	Entry name	Domain [FT]	Protein families
+#Entry	Entrez Gene	Entry name	Domain [FT]	Protein families
 P04217	1	A1BG_HUMAN	Ig-like V-type 1;Ig-like V-type 2;Ig-like V-type 3;Ig-like V-type 4;Ig-like V-type 5	
 P01023	2	A2MG_HUMAN		Protease inhibitor I39 (alpha-2-macroglobulin) family
 P18440	9	ARY1_HUMAN		Arylamine N-acetyltransferase family
