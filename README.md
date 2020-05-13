@@ -101,7 +101,7 @@ All proteins are denoted by their Entrez IDs.
 - `Ontology Term Types` --> additional types for terms classified as phenotypes
 
 
-#### `diseases/disgenet/all_gene_disease_associations.tab`
+#### `diseases/disgenet/all_gene_disease_associations.zip`
 This file contains the gene-disease associations of DisGeNET. See also [https://www.disgenet.org/dbinfo](https://www.disgenet.org/dbinfo). The columns are:
 
 - `Entrez Gene` --> NCBI Entrez Gene Identifier
