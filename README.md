@@ -160,7 +160,7 @@ This file contains the disease gene associations provided by [8]. Each line cont
 This file contains genes-domains and genes-families associations. Each line contains the genes associated with one or more domains and families. The columns are:
 
 - `Entry` --> the UniProtKB Identifier
-- `Entrez_Gene` --> the gene Entrez ID
+- `Entrez Gene` --> the gene Entrez ID
 - `Entry name` --> the gene name
 - `Domain [FT]` --> semicolon-separated list of domains (see https://www.uniprot.org/help/domain)
 - `Protein families` --> comma-separated list of families (see https://www.uniprot.org/help/family_membership)
@@ -169,7 +169,7 @@ This file contains genes-domains and genes-families associations. Each line cont
 This file contains the gene-drug associations with the following columns:
 
 - `Entry` --> the UniProtKB Identifier
-- `Entrez_Gene` --> the gene Entrez ID
+- `Entrez Gene` --> the gene Entrez ID
 - `Entry name` --> the gene name
 - `DrugBank` --> semicolon-separated list of DrugBank IDs associated with the gene (see https://www.uniprot.org/database/DB-0019)
 
@@ -177,7 +177,7 @@ This file contains the gene-drug associations with the following columns:
 This file contains the gene-pathways associations. The columns are:
 
 - `Entry` --> the UniProtKB Identifier
-- `Entrez_Gene` --> the gene Entrez ID
+- `Entrez Gene` --> the gene Entrez ID
 - `Entry name` --> the gene name
 - `Reactome` --> semicolon-separated list of [reactome](https://reactome.org/) pathways IDs associated with the gene
 
