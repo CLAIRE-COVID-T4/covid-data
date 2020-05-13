@@ -14,7 +14,7 @@ Apart from `drug-structures.sdf`, all data files are in TSV format (Tab-Separate
  - `diseases/`: a collection of gene to disease mappings
  - `uniprot_features`: additional gene features gathered from UniProt [12]
 
-In the `code` folder you will find the code used to create compact representations of the GO-terms. Instead, in the `GO_terms` folder you will find the generated clusters and embeddings.
+In the `code` folder you will find the code used to create compact representations of the GO-terms. Instead, in the `data_GO_terms` folder you will find the generated clusters and embeddings.
 
 ## Content Details
 
@@ -129,21 +129,11 @@ Note that:
 
 #### `diseases/disgenet/disease_mappings.tab`
 Mappings from UMLS concept unique identifier to disease vocabularies: DO, EFO, HPO, ICD9CM, MSH, NCI, OMIM, and ORDO. The columns are:
-- `DiseaseID`
-- `Name`
-- `Vocabulary`
-- `Code`
-- `VocabularyName`
-
-- `snpId` --> dbSNP variant Identifier
-- `Entrez Gene` --> NCBI Entrez Gene Identifier
-- `geneSymbol` --> Official Gene Symbol
-
-#### `diseases/disgenet/variant_to_gene_mappings.tab`
-Variants mapped to their corresponding genes, according to dbSNP. The columns are:
-- `snpId` --> dbSNP variant Identifier
-- `Entrez Gene` --> NCBI Entrez Gene Identifier
-- `GeneSymbol` --> Official Gene Symbol
+- `DiseaseID` --> UMLS concept unique identifier
+- `Name` --> Name of the disease
+- `Vocabulary` --> the name of the vocabulary in the range [DO, EFO, HPO, ICD9CM, MSH, NCI, OMIM, and ORDO]
+- `Code` --> the id of DiseaseID in the vocabulary
+- `VocabularyName` --> the name of DiseaseID in the vocabulary
 
 #### `diseases/disgenet/uniprot2entrez.tab`
 Mapping from UniProt knowledge base (UniProtKB) to genes Entrez IDs. The columns are:
@@ -191,9 +181,9 @@ This file contains the gene-pathways associations. The columns are:
 
 See [README](https://github.com/CLAIRE-COVID-T4/covid-data/tree/master/code#code-to-reproduce-node2vec-and-dbscan-analysis-of-go-terms) in the `code` folder.
 
-#### GO_terms
+#### data_GO_terms
 This folder contains the result of the computation of the GO terms embeddings, with dimension 128, and clustering.
-See [README](https://github.com/CLAIRE-COVID-T4/covid-data/tree/master/GO_terms#gene-ontology-go-terms-embeddings-and-clustering) in `GO_terms` for more information.
+See [README](https://github.com/CLAIRE-COVID-T4/covid-data/tree/master/data_GO_terms#gene-ontology-go-terms-embeddings-and-clustering) in `data_GO_terms` for more information.
 
 ## Nomenclature
 
