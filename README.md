@@ -32,7 +32,7 @@ A collection of drug-drug combinations with the following columns:
 #### `drug-host.tab`
 A collection of drug-protein interactions with the following columns:
 - `DrugBank` --> the DrugBank ID of the drug
-- `Target Entrez Gene` --> the Entrez ID of the gene associated with the protein
+- `EntrezID` --> the Entrez ID of the gene associated with the protein targeted by the drug
 
 #### `drug-structures.sdf`
 The [SDF](https://en.wikipedia.org/wiki/Chemical_table_file) file of all the drugs listed in `drug-host.tab` (i.e. the ones downloadable with and without registration to the DrugBank service). This file describes the 3D structure of the drug and provides additional information such as:
