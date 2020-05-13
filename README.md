@@ -103,7 +103,7 @@ All proteins are denoted by their Entrez IDs.
 
 
 #### `diseases/disgenet/curated_gene_disease_associations.tab`
-This file contains Gene-Disease associations from various resources such as UniProt, CGI, ClinGen, Genomics England Panel App, PsyGeNET, Orphanet, the HPO, and CTD (human data). See also [https://www.disgenet.org/dbinfo](https://www.disgenet.org/dbinfo). The columns are:
+This file contains only the curated Gene-Disease associations from DisGeNET. These associations are collected from various resources such as UniProt, CGI, ClinGen, Genomics England Panel App, PsyGeNET, Orphanet, the HPO, and CTD (human data). See also [https://www.disgenet.org/dbinfo](https://www.disgenet.org/dbinfo). The columns are:
 
 - `Entrez Gene` --> NCBI Entrez Gene Identifier
 - `geneSymbol` --> Official Gene Symbol
