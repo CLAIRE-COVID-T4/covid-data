@@ -1,11 +1,11 @@
 # COVID Datasets
-A collection of COVID-related datasets useful for drug-repurposing tasks. See the [**Nomenclature**](#nomenclature) section for an explanation of the terms used.
+A collection of COVID-related datasets useful for drug-repurposing tasks. See the [**Glossary**](#glossary) section for an explanation of the terms used.
 
 ## Content Summary
 
 Apart from `drug-structures.sdf`, all data files are in TSV format (Tab-Separated Values), where the first line contains the column names. The file contents are:
 
- - `host-host.tab`: a collection of Human Protein-Protein Interactions, from [1].
+ - `protein-protein.tab`: a collection of Human Protein-Protein Interactions, from [1].
  - `drug-host.tab`: a collection of experimentally validated Drug-Protein interaction, from [1].
  - `drug-drug.tab`: a collection of Drug-Drug interaction, from [1].
  - `go-terms.tab`: Gene Ontology (GO) terms associated to each Human protein contained in `host-host.tab`.
@@ -51,8 +51,8 @@ A collection of GO terms. There can be more than one GO term associated with a s
 - `PubMed` --> the publication ID in the PubMed database [5].
 - `Category` --> Can be `Function`, `Process` or `Component`
 
-#### `host-host.tab`
-A collection of drug-drug combinations with the following columns:
+#### `protein-protein.tab`
+A collection of protein-protein interactions with the following columns:
 
 - `EntrezGeneID_InteractorA` --> the Entrez ID of the first gene
 - `EntrezGeneID_InteractorB` --> the Entrez ID of the second gene
@@ -185,7 +185,7 @@ See [README](https://github.com/CLAIRE-COVID-T4/covid-data/tree/master/code#code
 This folder contains the result of the computation of the GO terms embeddings, with dimension 128, and clustering.
 See [README](https://github.com/CLAIRE-COVID-T4/covid-data/tree/master/GO_terms#gene-ontology-go-terms-embeddings-and-clustering) in `GO_terms` for more information.
 
-## Nomenclature
+## Glossary
 
 - CAS Number: a unique numerical identifier assigned by the Chemical Abstracts Service (CAS) to every chemical substance described in the open scientific literature.
 - DrugBank ID: the identifier of a drug in the DrugBank database [3].
