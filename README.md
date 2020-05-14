@@ -6,13 +6,15 @@ A collection of COVID-related datasets useful for drug-repurposing tasks. See th
 Apart from `drug-structures.sdf`, all data files are in TSV format (Tab-Separated Values), where the first line contains the column names. The file contents are:
 
  - `protein-protein.tab`: a collection of Human Protein-Protein Interactions, from [1].
+ - protein-info.tab: a collection of additional info about proteins, such as domain and family, taken from UniProt [12].
  - `drug-host.tab`: a collection of experimentally validated Drug-Protein interaction, from [1].
  - `drug-drug.tab`: a collection of Drug-Drug interaction, from [1].
  - `go-terms.tab`: Gene Ontology (GO) terms associated to each Human protein contained in `host-host.tab`.
  - `drug-structures.sdf`: drug Structure-Data File (SDF), from the open-data collection of [3].
  - `virus-host/`: a collection of various Human viruses, from [4].
  - `disease-gene/`: a collection of disease-gene associations and mappings.
- - `uniprot_features/`: additional gene features gathered from UniProt [12]
+ - gene-pathways.tab: a collection of associations between genes and Reactome pathways.
+ - gene-drugs.tab: a collection of gene-drug associations, taken from UniProt [12].
 
 In the `code` folder you will find the code used to create compact representations of the GO-terms. Instead, in the `GO_terms` folder you will find the generated clusters and embeddings.
 
@@ -151,7 +153,7 @@ This file contains the disease gene associations provided by [8]. Each line cont
 - `OMIMEntrezGeneIDs` --> comma-separated list of OMIM genes in Entrez IDs
 - `GWASEntrezGeneIDs` --> comma-separated list of GWAS genes in Entrez IDs
 
-#### `uniprot_features/domains.tab`
+#### `proteins-info.tab`
 This file contains genes-domains and genes-families associations. Each line contains the genes associated with one or more domains and families. The columns are:
 
 - `UniProtKBID` --> the UniProtKB Identifier
@@ -160,7 +162,7 @@ This file contains genes-domains and genes-families associations. Each line cont
 - `Domain` --> semicolon-separated list of domains (see https://www.uniprot.org/help/domain)
 - `ProteinFamilies` --> comma-separated list of families (see https://www.uniprot.org/help/family_membership)
 
-#### `uniprot_features/gene-drug_associations.tab`
+#### `gene-drugs.tab`
 This file contains the gene-drug associations with the following columns:
 
 - `UniProtKBID` --> the UniProtKB Identifier
@@ -168,7 +170,7 @@ This file contains the gene-drug associations with the following columns:
 - `GeneSymbol` --> Official Gene Symbol
 - `DrugBankIDs` --> semicolon-separated list of DrugBank IDs associated with the gene (see https://www.uniprot.org/database/DB-0019)
 
-#### `uniprot_features/gene-pathways_associations.tab`
+#### `gene-pathways.tab`
 This file contains the gene-pathways associations. The columns are:
 
 - `UniProtKBID` --> the UniProtKB Identifier
