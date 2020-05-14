@@ -11,7 +11,7 @@ Apart from `drug-structures.sdf`, all data files are in TSV format (Tab-Separate
  - `go-terms.tab`: Gene Ontology (GO) terms associated to each Human protein contained in `host-host.tab`.
  - `drug-structures.sdf`: drug Structure-Data File (SDF), from the open-data collection of [3].
  - `virus-host/*.tab`: a collection of various Human viruses, from [4].
- - `diseases/`: a collection of gene to disease mappings
+ - `disease-gene_associations/`: a collection of disease-gene associations and mappings.
  - `uniprot_features`: additional gene features gathered from UniProt [12]
 
 In the `code` folder you will find the code used to create compact representations of the GO-terms. Instead, in the `GO_terms` folder you will find the generated clusters and embeddings.
@@ -101,7 +101,7 @@ All proteins are denoted by their Entrez IDs.
 - `OntologyTermTypes` --> additional types for terms classified as phenotypes
 
 
-#### `diseases/disgenet/all_gene_disease_associations.zip`
+#### `disease-gene_associations/disgenet/all_gene_disease_associations.zip`
 This file contains the gene-disease associations of DisGeNET. See also [https://www.disgenet.org/dbinfo](https://www.disgenet.org/dbinfo). The columns are:
 
 - `EntrezGeneID` --> NCBI Entrez Gene Identifier
@@ -127,7 +127,7 @@ Note that:
 - `Source` indicates the sources related to the specific association (can be many)
 - `NofPmids` is the number of evidences in the literature that report the specific association
 
-#### `diseases/disgenet/disease_mappings.tab`
+#### `disease-gene_associations/disgenet/disease_mappings.tab`
 Mappings from UMLS concept unique identifier to disease vocabularies: DO, EFO, HPO, ICD9CM, MSH, NCI, OMIM, and ORDO. The columns are:
 - `DiseaseID` --> UMLS concept unique identifier
 - `Name` --> Name of the disease
@@ -135,13 +135,13 @@ Mappings from UMLS concept unique identifier to disease vocabularies: DO, EFO, H
 - `Code` --> the id of DiseaseID in the vocabulary
 - `VocabularyName` --> the name of DiseaseID in the vocabulary
 
-#### `diseases/disgenet/uniprot2entrez.tab`
+#### `disease-gene_associations/disgenet/uniprot2entrez.tab`
 Mapping from UniProt knowledge base (UniProtKB) to genes Entrez IDs. The columns are:
 
 - `UniProtKBID` --> UniProtKB Identifier
 - `EntrezGeneID` --> the gene Entrez ID
 
-#### `diseases/menche_disease_genes.tab`
+#### `disease-gene_associations/menche_disease_genes.tab`
 This file contains the disease gene associations provided by [8]. Each line contains the genes (gene IDs) associated with one disease. The columns are:
 
 - `DiseaseName` --> name of the disease
