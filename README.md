@@ -10,8 +10,8 @@ Apart from `drug-structures.sdf`, all data files are in TSV format (Tab-Separate
  - `uniprotid2entrezid.tab`: Mapping from UniProt knowledge base Ids (UniProtKB) to genes Entrez IDs.
  - `go-terms.tab`: Gene Ontology (GO) terms associated to each Human protein contained in `protein-protein.tab`.
  - `proteins-pathways.tab`: a collection of associations between genes/proteins and Reactome [16] pathways.
- - `drug-host_uniprot.tab`: a collection of associations between genes/proteins and drugs, taken from [12].
  - `drug-host.tab`: a collection of experimentally validated Drug-Protein interaction, from [1].
+ - `drug-host_uniprot.tab`: a collection of associations between genes/proteins and drugs, taken from [12].
  - `drug-drug.tab`: a collection of Drug-Drug interaction, from [1].
  - `drug-structures.sdf`: drug Structure-Data File (SDF), from the open-data collection of [3].
  - `virus-host/`: a collection of various Human viruses, from [4].
@@ -23,26 +23,26 @@ In the `code` folder you will find the code used to create compact representatio
 
 This section describes the content of the files in the `data` folder.
 
-#### `drug-drug.tab`
-A collection of drug-drug combinations with the following columns:
+#### `protein-protein.tab`
+A collection of protein-protein interactions with the following columns:
 
-- `DrugBankID_InteractorA` --> the DrugBank ID of the first drug
-- `DrugBankID_InteractorB` --> the DrugBank ID of the second drug
-- `Adverse` --> a boolean value `N` or `Y` where
-    - `N`: the two drugs produce an experimentally validated combination
-    - `Y`: the two drugs produce a clinically-reported adverse interaction
+- `EntrezGeneID_InteractorA` --> the Entrez ID of the first gene
+- `EntrezGeneID_InteractorB` --> the Entrez ID of the second gene
 
-#### `drug-host.tab`
-A collection of drug-protein interactions with the following columns:
-- `DrugBankID` --> the DrugBank ID of the drug
-- `EntrezGeneID` --> the Entrez ID of the gene associated with the protein targeted by the drug
+#### `proteins-info.tab`
+This file contains protein-domains and protein-families associations. Each line contains the genes associated with one or more domains and families. The columns are:
 
-#### `drug-structures.sdf`
-The [SDF](https://en.wikipedia.org/wiki/Chemical_table_file) file of drug structures containing 10674 distinct drugs (11151 with aliases), and *almost* all the drugs listed in `drug-host.tab` (i.e. the ones downloadable with and without registration to the DrugBank service, that amount to 4283 of the 4428 drugs). This file contains the 2D structure of the drugs indexed by their DrugBank ID, providing also additional information such as:
-- `Secondary Accession Numbers`
-- `Common Name`
-- `CAS Number`
-- `Synonyms`
+- `UniProtKBID` --> the UniProtKB Identifier
+- `EntrezGeneID` --> the gene Entrez ID
+- `GeneSymbol` --> Official Gene Symbol
+- `Domain` --> semicolon-separated list of domains (see https://www.uniprot.org/help/domain)
+- `ProteinFamilies` --> comma-separated list of families (see https://www.uniprot.org/help/family_membership)
+
+#### `uniprotid2entrezid.tab`
+Mapping from UniProt knowledge base Ids (UniProtKB) to genes Entrez IDs. The columns are:
+
+- `UniProtKBID` --> UniProtKB Identifier
+- `EntrezGeneID` --> the gene Entrez ID
 
 #### `go-terms.tab`
 A collection of GO terms. There can be more than one GO term associated with a specific gene. The file has the following columns:
@@ -54,12 +54,42 @@ A collection of GO terms. There can be more than one GO term associated with a s
 - `PubMed` --> the publication ID in the PubMed database [5].
 - `Category` --> Can be `Function`, `Process` or `Component`
 
-#### `protein-protein.tab`
-A collection of protein-protein interactions with the following columns:
+#### `proteins-pathways.tab`
+This file contains the protein-pathways associations  in the UniProt Database. The columns are:
 
-- `EntrezGeneID_InteractorA` --> the Entrez ID of the first gene
-- `EntrezGeneID_InteractorB` --> the Entrez ID of the second gene
+- `UniProtKBID` --> the UniProtKB Identifier
+- `EntrezGeneID` --> the gene Entrez ID
+- `GeneSymbol` --> Official Gene Symbol
+- `ReactomeIDs` --> semicolon-separated list of [reactome](https://reactome.org/) pathways IDs associated with the gene
 
+#### `drug-host.tab`
+A collection of drug-protein interactions with the following columns:
+- `DrugBankID` --> the DrugBank ID of the drug
+- `EntrezGeneID` --> the Entrez ID of the gene associated with the protein targeted by the drug
+
+#### `drug-host_uniprot.tab`
+This file contains the drug-protein interactions in the UniProt Database. The columns are:
+
+- `UniProtKBID` --> the UniProtKB Identifier
+- `EntrezGeneID` --> the gene Entrez ID
+- `GeneSymbol` --> Official Gene Symbol
+- `DrugBankIDs` --> semicolon-separated list of DrugBank IDs associated with the gene (see https://www.uniprot.org/database/DB-0019)
+
+#### `drug-drug.tab`
+A collection of drug-drug combinations with the following columns:
+
+- `DrugBankID_InteractorA` --> the DrugBank ID of the first drug
+- `DrugBankID_InteractorB` --> the DrugBank ID of the second drug
+- `Adverse` --> a boolean value `N` or `Y` where
+    - `N`: the two drugs produce an experimentally validated combination
+    - `Y`: the two drugs produce a clinically-reported adverse interaction
+
+#### `drug-structures.sdf`
+The [SDF](https://en.wikipedia.org/wiki/Chemical_table_file) file of drug structures containing 10674 distinct drugs (11151 with aliases), and *almost* all the drugs listed in `drug-host.tab` (i.e. the ones downloadable with and without registration to the DrugBank service, that amount to 4283 of the 4428 drugs). This file contains the 2D structure of the drugs indexed by their DrugBank ID, providing also additional information such as:
+- `Secondary Accession Numbers`
+- `Common Name`
+- `CAS Number`
+- `Synonyms`
 
 #### `virus-host/*.tab`
 
@@ -102,7 +132,6 @@ All proteins are denoted by their Entrez IDs.
 - `OntologyTermQualifierIDs` --> additional qualifying term IDs associated with `TREMBL Accessions Interactor B`
 - `OntologyTermQualifierNames` --> additional qualifying term names associated with `REFSEQ Accessions Interactor B`
 - `OntologyTermTypes` --> additional types for terms classified as phenotypes
-
 
 #### `disease-gene/disgenet/all_gene_disease_associations.zip`
 This file contains the gene-disease associations of DisGeNET. See also [https://www.disgenet.org/dbinfo](https://www.disgenet.org/dbinfo). The columns are:
@@ -147,38 +176,6 @@ This file contains the disease gene associations provided by [8]. Each line cont
 - `NumberOfGWASGenes` --> number of associated genes from GWAS
 - `OMIMEntrezGeneIDs` --> comma-separated list of OMIM genes in Entrez IDs
 - `GWASEntrezGeneIDs` --> comma-separated list of GWAS genes in Entrez IDs
-
-#### `proteins-info.tab`
-This file contains protein-domains and protein-families associations. Each line contains the genes associated with one or more domains and families. The columns are:
-
-- `UniProtKBID` --> the UniProtKB Identifier
-- `EntrezGeneID` --> the gene Entrez ID
-- `GeneSymbol` --> Official Gene Symbol
-- `Domain` --> semicolon-separated list of domains (see https://www.uniprot.org/help/domain)
-- `ProteinFamilies` --> comma-separated list of families (see https://www.uniprot.org/help/family_membership)
-
-#### `uniprotid2entrezid.tab`
-Mapping from UniProt knowledge base Ids (UniProtKB) to genes Entrez IDs. The columns are:
-
-- `UniProtKBID` --> UniProtKB Identifier
-- `EntrezGeneID` --> the gene Entrez ID
-
-#### `drug-host_uniprot.tab`
-This file contains the drug-protein interactions in the UniProt Database. The columns are:
-
-- `UniProtKBID` --> the UniProtKB Identifier
-- `EntrezGeneID` --> the gene Entrez ID
-- `GeneSymbol` --> Official Gene Symbol
-- `DrugBankIDs` --> semicolon-separated list of DrugBank IDs associated with the gene (see https://www.uniprot.org/database/DB-0019)
-
-#### `proteins-pathways.tab`
-This file contains the protein-pathways associations  in the UniProt Database. The columns are:
-
-- `UniProtKBID` --> the UniProtKB Identifier
-- `EntrezGeneID` --> the gene Entrez ID
-- `GeneSymbol` --> Official Gene Symbol
-- `ReactomeIDs` --> semicolon-separated list of [reactome](https://reactome.org/) pathways IDs associated with the gene
-
 
 ## Clustering and Node2vec: how-to
 
