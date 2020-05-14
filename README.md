@@ -6,15 +6,15 @@ A collection of COVID-related datasets useful for drug-repurposing tasks. See th
 Apart from `drug-structures.sdf`, all data files are in TSV format (Tab-Separated Values), where the first line contains the column names. The file contents are:
 
  - `protein-protein.tab`: a collection of Human Protein-Protein Interactions, from [1].
- - protein-info.tab: a collection of additional info about proteins, such as domain and family, taken from UniProt [12].
+ - `protein-info.tab`: a collection of additional info about proteins, such as domain and family, taken from UniProt [12].
  - `drug-host.tab`: a collection of experimentally validated Drug-Protein interaction, from [1].
  - `drug-drug.tab`: a collection of Drug-Drug interaction, from [1].
  - `go-terms.tab`: Gene Ontology (GO) terms associated to each Human protein contained in `host-host.tab`.
  - `drug-structures.sdf`: drug Structure-Data File (SDF), from the open-data collection of [3].
  - `virus-host/`: a collection of various Human viruses, from [4].
  - `disease-gene/`: a collection of disease-gene associations and mappings.
- - gene-pathways.tab: a collection of associations between genes and Reactome pathways.
- - gene-drugs.tab: a collection of gene-drug associations, taken from UniProt [12].
+ - `gene-pathways.tab`: a collection of associations between genes and Reactome pathways.
+ - `gene-drugs.tab`: a collection of gene-drug associations, taken from UniProt [12].
 
 In the `code` folder you will find the code used to create compact representations of the GO-terms. Instead, in the `GO_terms` folder you will find the generated clusters and embeddings.
 
