@@ -8,7 +8,7 @@ Apart from `drug-structures.sdf`, all data files are in TSV format (Tab-Separate
  - `protein-protein.tab`: a collection of Human Protein-Protein Interactions, from [1].
  - `protein-info.tab`: a collection of additional info about proteins contained in `protein-protein.tab`, such as domain and family, taken from [12].
  - `go-terms.tab`: Gene Ontology (GO) terms associated to each Human protein contained in `protein-protein.tab`.
- - `gene-pathways.tab`: a collection of associations between genes/proteins and Reactome pathways.
+ - `gene-pathways.tab`: a collection of associations between genes/proteins and Reactome [16] pathways.
  - `gene-drugs.tab`: a collection of associations between genes/proteins and drugs, taken from [12].
  - `drug-host.tab`: a collection of experimentally validated Drug-Protein interaction, from [1].
  - `drug-drug.tab`: a collection of Drug-Drug interaction, from [1].
@@ -222,4 +222,5 @@ See [README](https://github.com/CLAIRE-COVID-T4/covid-data/tree/master/GO_terms#
 [13] UMLS, [https://www.nlm.nih.gov/research/umls/index.html](https://www.nlm.nih.gov/research/umls/index.html) \
 [14] dbSNP, [https://www.ncbi.nlm.nih.gov/snp/](https://www.ncbi.nlm.nih.gov/snp/) \
 [15] Aditya, G., and Leskovec, J. node2vec: Scalable feature learning for networks. Proceedings of the 22nd ACM SIGKDD international conference on Knowledge discovery and data mining. 2016.
+[16] Reactome, [https://reactome.org/]
 
