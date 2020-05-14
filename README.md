@@ -7,9 +7,10 @@ Apart from `drug-structures.sdf`, all data files are in TSV format (Tab-Separate
 
  - `protein-protein.tab`: a collection of Human Protein-Protein Interactions, from [1].
  - `protein-info.tab`: a collection of additional info about proteins contained in `protein-protein.tab`, such as domain and family, taken from [12].
+ - `uniprotid2entrezid.tab`: Mapping from UniProt knowledge base Ids (UniProtKB) to genes Entrez IDs.
  - `go-terms.tab`: Gene Ontology (GO) terms associated to each Human protein contained in `protein-protein.tab`.
- - `gene-pathways.tab`: a collection of associations between genes/proteins and Reactome [16] pathways.
- - `gene-drugs.tab`: a collection of associations between genes/proteins and drugs, taken from [12].
+ - `proteins-pathways.tab`: a collection of associations between genes/proteins and Reactome [16] pathways.
+ - `drug-host_uniprot.tab`: a collection of associations between genes/proteins and drugs, taken from [12].
  - `drug-host.tab`: a collection of experimentally validated Drug-Protein interaction, from [1].
  - `drug-drug.tab`: a collection of Drug-Drug interaction, from [1].
  - `drug-structures.sdf`: drug Structure-Data File (SDF), from the open-data collection of [3].
@@ -156,8 +157,8 @@ This file contains protein-domains and protein-families associations. Each line 
 - `Domain` --> semicolon-separated list of domains (see https://www.uniprot.org/help/domain)
 - `ProteinFamilies` --> comma-separated list of families (see https://www.uniprot.org/help/family_membership)
 
-#### `uniprot2entrez.tab`
-Mapping from UniProt knowledge base (UniProtKB) to genes Entrez IDs. The columns are:
+#### `uniprotid2entrezid.tab`
+Mapping from UniProt knowledge base Ids (UniProtKB) to genes Entrez IDs. The columns are:
 
 - `UniProtKBID` --> UniProtKB Identifier
 - `EntrezGeneID` --> the gene Entrez ID
@@ -170,7 +171,7 @@ This file contains the drug-protein interactions in the UniProt Database. The co
 - `GeneSymbol` --> Official Gene Symbol
 - `DrugBankIDs` --> semicolon-separated list of DrugBank IDs associated with the gene (see https://www.uniprot.org/database/DB-0019)
 
-#### `protein-pathways.tab`
+#### `proteins-pathways.tab`
 This file contains the protein-pathways associations  in the UniProt Database. The columns are:
 
 - `UniProtKBID` --> the UniProtKB Identifier
