@@ -14,7 +14,7 @@ Apart from `drug-structures.sdf`, all data files are in TSV format (Tab-Separate
  - `diseases/`: a collection of gene to disease mappings
  - `uniprot_features`: additional gene features gathered from UniProt [12]
 
-In the `code` folder you will find the code used to create compact representations of the GO-terms. Instead, in the `data_GO_terms` folder you will find the generated clusters and embeddings.
+In the `code` folder you will find the code used to create compact representations of the GO-terms. Instead, in the `GO_terms` folder you will find the generated clusters and embeddings.
 
 ## Content Details
 
@@ -181,9 +181,9 @@ This file contains the gene-pathways associations. The columns are:
 
 See [README](https://github.com/CLAIRE-COVID-T4/covid-data/tree/master/code#code-to-reproduce-node2vec-and-dbscan-analysis-of-go-terms) in the `code` folder.
 
-#### data_GO_terms
+#### GO_terms
 This folder contains the result of the computation of the GO terms embeddings, with dimension 128, and clustering.
-See [README](https://github.com/CLAIRE-COVID-T4/covid-data/tree/master/data_GO_terms#gene-ontology-go-terms-embeddings-and-clustering) in `data_GO_terms` for more information.
+See [README](https://github.com/CLAIRE-COVID-T4/covid-data/tree/master/GO_terms#gene-ontology-go-terms-embeddings-and-clustering) in `GO_terms` for more information.
 
 ## Nomenclature
 
