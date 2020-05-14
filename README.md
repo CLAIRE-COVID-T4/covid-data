@@ -1,5 +1,5 @@
 # COVID Datasets
-A collection of COVID-related datasets useful for drug-repurposing tasks. See the [**Glossary**](#glossary) section for an explanation of the terms used.
+A collection of COVID-related datasets useful for drug-repurposing tasks. See the [**Glossary**](#glossary) section for an explanation of the terms used. For a comprehensive overview of the resources and methodology see also the [**Report**](https://github.com/CLAIRE-COVID-T4/covid-data/blob/master/%20A%20curated%20network%20ofprotein-drug-genedataandvirus-hostin-teractions%20for%20drug-repurposing%20research.pdf)
 
 ## Content Summary
 
