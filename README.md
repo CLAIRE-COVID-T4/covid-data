@@ -137,12 +137,6 @@ Mappings from UMLS concept unique identifier to disease vocabularies: DO, EFO, H
 - `Code` --> the id of DiseaseID in the vocabulary
 - `VocabularyName` --> the name of DiseaseID in the vocabulary
 
-#### `disease-gene/disgenet/uniprot2entrez.tab`
-Mapping from UniProt knowledge base (UniProtKB) to genes Entrez IDs. The columns are:
-
-- `UniProtKBID` --> UniProtKB Identifier
-- `EntrezGeneID` --> the gene Entrez ID
-
 #### `disease-gene/menche_disease_genes.tab`
 This file contains the disease gene associations provided by [8]. Each line contains the genes (gene IDs) associated with one disease. The columns are:
 
@@ -154,7 +148,7 @@ This file contains the disease gene associations provided by [8]. Each line cont
 - `GWASEntrezGeneIDs` --> comma-separated list of GWAS genes in Entrez IDs
 
 #### `proteins-info.tab`
-This file contains genes-domains and genes-families associations. Each line contains the genes associated with one or more domains and families. The columns are:
+This file contains protein-domains and protein-families associations. Each line contains the genes associated with one or more domains and families. The columns are:
 
 - `UniProtKBID` --> the UniProtKB Identifier
 - `EntrezGeneID` --> the gene Entrez ID
@@ -162,16 +156,22 @@ This file contains genes-domains and genes-families associations. Each line cont
 - `Domain` --> semicolon-separated list of domains (see https://www.uniprot.org/help/domain)
 - `ProteinFamilies` --> comma-separated list of families (see https://www.uniprot.org/help/family_membership)
 
-#### `gene-drugs.tab`
-This file contains the gene-drug associations with the following columns:
+#### `uniprot2entrez.tab`
+Mapping from UniProt knowledge base (UniProtKB) to genes Entrez IDs. The columns are:
+
+- `UniProtKBID` --> UniProtKB Identifier
+- `EntrezGeneID` --> the gene Entrez ID
+
+#### `drug-host_uniprot.tab`
+This file contains the drug-protein interactions in the UniProt Database. The columns are:
 
 - `UniProtKBID` --> the UniProtKB Identifier
 - `EntrezGeneID` --> the gene Entrez ID
 - `GeneSymbol` --> Official Gene Symbol
 - `DrugBankIDs` --> semicolon-separated list of DrugBank IDs associated with the gene (see https://www.uniprot.org/database/DB-0019)
 
-#### `gene-pathways.tab`
-This file contains the gene-pathways associations. The columns are:
+#### `protein-pathways.tab`
+This file contains the protein-pathways associations  in the UniProt Database. The columns are:
 
 - `UniProtKBID` --> the UniProtKB Identifier
 - `EntrezGeneID` --> the gene Entrez ID
