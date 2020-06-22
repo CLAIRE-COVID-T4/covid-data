@@ -14,7 +14,7 @@ Apart from `drug-structures.sdf`, all data files are in TSV format (Tab-Separate
  - `drug-host_uniprot.tab`: a collection of associations between genes/proteins and drugs, taken from [12].
  - `drug-drug.tab`: a collection of Drug-Drug interaction, from [1].
  - `drug-structures.sdf`: drug Structure-Data File (SDF), from the open-data collection of [3].
- - `virus-host/`: a collection of various Human viruses, from [4].
+ - `virus-host/`: a collection of various Human viruses, from [4] and the Covid-19 host-gene list from [17].
  - `disease-gene/`: a collection of disease-gene associations.
 
 In the `code` folder you will find the code used to create compact representations of the GO-terms. Instead, in the `GO_terms` folder you will find the generated clusters and embeddings.
@@ -133,6 +133,11 @@ All proteins are denoted by their Entrez IDs.
 - `OntologyTermQualifierNames` --> additional qualifying term names associated with `REFSEQ Accessions Interactor B`
 - `OntologyTermTypes` --> additional types for terms classified as phenotypes
 
+#### `virus-host/human_coivd_host_genes.tab`
+This file contains the Human Genes interacting with the SARS-CoV-2 (aka. Covid-19-Human) from [17].
+All proteins are denoted by their Entrez IDs.
+- `EntrezGeneID` --> NCBI Entrez Gene Identifier
+
 #### `disease-gene/disgenet/all_gene_disease_associations.zip`
 This file contains the gene-disease associations of DisGeNET. See also [https://www.disgenet.org/dbinfo](https://www.disgenet.org/dbinfo). The columns are:
 
@@ -220,5 +225,6 @@ See [README](https://github.com/CLAIRE-COVID-T4/covid-data/tree/master/GO_terms#
 [13] UMLS, [https://www.nlm.nih.gov/research/umls/index.html](https://www.nlm.nih.gov/research/umls/index.html) \
 [14] dbSNP, [https://www.ncbi.nlm.nih.gov/snp/](https://www.ncbi.nlm.nih.gov/snp/) \
 [15] Aditya, G., and Leskovec, J. node2vec: Scalable feature learning for networks. Proceedings of the 22nd ACM SIGKDD international conference on Knowledge discovery and data mining. 2016.
-[16] Reactome, [https://reactome.org/]
+[16] Reactome, [https://reactome.org/] \
+[17]  Gordon, D.E., Jang, G.M., Bouhaddou, M. et al. A SARS-CoV-2 protein interaction map reveals targets for drug repurposing. Nature (2020), [https://doi.org/10.1038/s41586-020-2286-9](https://doi.org/10.1038/s41586-020-2286-9)
 
