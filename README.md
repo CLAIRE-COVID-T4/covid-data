@@ -93,7 +93,7 @@ The [SDF](https://en.wikipedia.org/wiki/Chemical_table_file) file of drug struct
 
 #### `virus-host/*.tab`
 
-All the files in this folder contain the Virus-Virus, Virus-Human, and Human-Human PPIs related to a specific virus (e.g., SARS-CoV, SARS-CoV-2, MERS-CoV, HIV, etc).
+All the files, excluding `human_coivd_host_genes.tab`, in this folder contain the Virus-Virus, Virus-Human, and Human-Human PPIs related to a specific virus (e.g., SARS-CoV, SARS-CoV-2, MERS-CoV, HIV, etc).
 All proteins are denoted by their Entrez IDs.
 - `BioGRIDInteractionID` --> the BioGRID ID for the interaction
 - `EntrezGeneID_InteractorA` --> the Entrez Gene database ID for Interactor A
