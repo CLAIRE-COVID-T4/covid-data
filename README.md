@@ -224,7 +224,7 @@ See [README](https://github.com/CLAIRE-COVID-T4/covid-data/tree/master/GO_terms#
 [12] UniProt, [https://www.uniprot.org/](https://www.uniprot.org/) \
 [13] UMLS, [https://www.nlm.nih.gov/research/umls/index.html](https://www.nlm.nih.gov/research/umls/index.html) \
 [14] dbSNP, [https://www.ncbi.nlm.nih.gov/snp/](https://www.ncbi.nlm.nih.gov/snp/) \
-[15] Aditya, G., and Leskovec, J. node2vec: Scalable feature learning for networks. Proceedings of the 22nd ACM SIGKDD international conference on Knowledge discovery and data mining. 2016.
+[15] Aditya, G., and Leskovec, J. node2vec: Scalable feature learning for networks. Proceedings of the 22nd ACM SIGKDD international conference on Knowledge discovery and data mining. 2016. \
 [16] Reactome, [https://reactome.org/] \
 [17]  Gordon, D.E., Jang, G.M., Bouhaddou, M. et al. A SARS-CoV-2 protein interaction map reveals targets for drug repurposing. Nature (2020), [https://doi.org/10.1038/s41586-020-2286-9](https://doi.org/10.1038/s41586-020-2286-9)
 
